@@ -1,9 +1,10 @@
-# Spreadsheet Cheat Sheet
+<h1 align="center"><strong>Spreadsheet Cheat Sheet</strong></h1>
 
-## Author: Matthew Sweitzer - email: sweitzer.34@osu.edu
+  <h3 align="center">Author: Matthew Sweitzer<br>Email: sweitzer.34@osu.edu<br>Website: <a href="https://www.matthewsweitzer.com">matthewsweitzer.com</a></h3>
+
+<hr>
 
 This document is meant to guide you through some of the basic functions in spreadsheet editing software, like Microsoft Excel, Google Sheets, or Apple Numbers. The tutorial and linked example data are offered under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons - Attribution</a> license. That means you may use, share, or change it in any way you like -- just make sure that you credit the author if you publish this in some form.
-
 
 
 ### Mean
