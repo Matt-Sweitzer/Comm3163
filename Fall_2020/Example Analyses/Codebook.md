@@ -1,4 +1,4 @@
-# Codebook for <a href="">example data</a>
+# Codebook for <a href="https://github.com/Matt-Sweitzer/Comm3163/blob/master/Fall_2020/Example%20Analyses/ExampleData.xlsx">example data</a>
 
 ## Participant
 
@@ -27,3 +27,11 @@ Ratio Numeric - answer to the question "In a typical week during the season, how
 ## Hours_NFL_Cat
 
 Ordinal Categories - data transformation (binning) of the Hours_NFL variable into "Low" (0 to 3 hours), "Medium" (4 to 9 hours), and "High" (10 or more hours). As-is, this variable is incomplete in the provided data; follow the tutorial in "SpreadsheetCheatSheet.md" to complete it.
+
+## Total_Hours_Both
+
+Ratio Numeric - summative index of Hours_NCAA and Hours_NFL. As-is, this variable is incomplete in the provided data; follow the tutorial in "SpreadsheetCheatSheet.md" to complete it.
+
+## Avg_Hours_Both
+
+Ratio Numeric - mean index of Hours_NCAA and Hours_NFL. As-is, this variable is incomplete in the provided data; follow the tutorial in "SpreadsheetCheatSheet.md" to complete it.
