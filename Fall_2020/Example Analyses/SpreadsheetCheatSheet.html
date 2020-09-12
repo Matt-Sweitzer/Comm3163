@@ -1,0 +1,857 @@
+      <!DOCTYPE html>
+      <html>
+        <head>
+            <meta charset="utf-8" />
+            <title>SpreadsheetCheatSheet</title>
+            <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(238, 255, 255); background-color: rgb(38, 50, 56); overflow: auto; }
+.markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) strong { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) del { color: rgb(156, 255, 255); }
+.markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: rgb(0, 150, 136); }
+.markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(156, 255, 255); border-color: rgb(71, 93, 105); border-width: 4px; }
+.markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top: 2px dashed rgb(71, 93, 105); background: none; }
+.markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview:not([data-use-github-style]) th { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(71, 93, 105); }
+.markdown-preview:not([data-use-github-style]) code { color: rgb(255, 255, 255); background-color: rgb(54, 72, 80); }
+.markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(46, 61, 68); }
+.markdown-preview:not([data-use-github-style]) kbd { color: rgb(255, 255, 255); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(71, 93, 105) rgb(71, 93, 105) rgb(59, 77, 86); border-image: initial; background-color: rgb(54, 72, 80); }
+.markdown-preview[data-use-github-style] { font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif; line-height: 1.6; overflow-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); background-color: rgb(255, 255, 255); overflow: scroll; }
+.markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; }
+.markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left: 4px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] table tr { background-color: rgb(255, 255, 255); border-top: 1px solid rgb(204, 204, 204); }
+.markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; background-color: rgba(0, 0, 0, 0.04); border-radius: 3px; }
+.markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; background: transparent; border: 0px; }
+.markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border-radius: 3px; }
+.markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview[data-use-github-style] pre { overflow-wrap: normal; }
+.markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; overflow-wrap: normal; background-color: transparent; border: 0px; }
+.markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; background-color: rgb(252, 252, 252); border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-image: initial; border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; }
+.markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview[data-use-github-style] code { color: inherit; }
+.markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.markdown-preview pre.editor-colors { user-select: auto; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover .horizontal-scrollbar { visibility: visible; }
+.markdown-preview .task-list-item input[type="checkbox"] { position: absolute; margin: 0.25em 0px 0px -1.4em; }
+.markdown-preview .task-list-item { list-style-type: none; }
+.markdown-preview code { text-shadow: none; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+.line-number.bracket-matcher.bracket-matcher {
+  color: rgba(238, 255, 255, 0.2);
+  background-color: #1c2429;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+.spell-check-corrections {
+  width: 25em !important;
+}
+
+pre.editor-colors {
+  background-color: #263238;
+  color: #EEFFFF;
+}
+pre.editor-colors .wrap-guide {
+  background-color: #2b3940;
+}
+pre.editor-colors .indent-guide {
+  color: #2b3940;
+}
+pre.editor-colors .invisible-character {
+  color: #373b41;
+}
+pre.editor-colors .cursor-line {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+pre.editor-colors .gutter {
+  background-color: #263238;
+  color: rgba(238, 255, 255, 0.2);
+}
+pre.editor-colors .gutter .line-number.cursor-line {
+  background-color: #212b30;
+  color: rgba(238, 255, 255, 0.2);
+}
+pre.editor-colors .gutter .line-number.cursor-line-no-selection {
+  color: rgba(238, 255, 255, 0.2);
+}
+pre.editor-colors .fold-marker:after,
+pre.editor-colors .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after {
+  color: #B2CCD6;
+}
+pre.editor-colors .invisible {
+  color: #EEFFFF;
+}
+pre.editor-colors .cursor {
+  color: #009688;
+  border-width: 2px;
+}
+pre.editor-colors .selection .region {
+  background-color: #3b4d56;
+}
+pre.editor-colors .search-results .syntax--marker .region {
+  background-color: transparent;
+  border: 1px solid #B2CCD6;
+}
+pre.editor-colors .search-results .syntax--marker.current-result .region {
+  border: 1px solid white;
+}
+.syntax--comment {
+  color: #4f6875;
+}
+.syntax--keyword {
+  color: #C792EA;
+}
+.syntax--keyword.syntax--control {
+  color: #C792EA;
+}
+.syntax--keyword.syntax--control.syntax--elements {
+  color: #B2CCD6;
+}
+.syntax--keyword.syntax--operator {
+  color: #89DDF3;
+}
+.syntax--keyword.syntax--other.syntax--special-method {
+  color: #82AAFF;
+}
+.syntax--keyword.syntax--other.syntax--unit {
+  color: #FFCB6B;
+}
+.syntax--storage {
+  color: #C792EA;
+}
+.syntax--constant {
+  color: #F07178;
+}
+.syntax--constant.syntax--character.syntax--escape {
+  color: #89DDF3;
+}
+.syntax--constant.syntax--numeric {
+  color: #F78C6A;
+}
+.syntax--constant.syntax--other.syntax--color {
+  color: #89DDF3;
+}
+.syntax--constant.syntax--other.syntax--symbol {
+  color: #C3E88D;
+}
+.syntax--constant.syntax--language.syntax--null {
+  color: #FF5370;
+}
+.syntax--variable {
+  color: #EEFFFF;
+}
+.syntax--variable.syntax--interpolation {
+  color: #eb434c;
+}
+.syntax--variable.syntax--parameter.syntax--function {
+  color: #F78C6A;
+}
+.syntax--variable.syntax--language {
+  color: #FF5370;
+}
+.syntax--variable.syntax--variable.syntax--object {
+  color: #FFCB6B;
+}
+.syntax--invalid.syntax--illegal {
+  background-color: #F07178;
+  color: #263238;
+}
+.syntax--string {
+  color: #C3E88D;
+}
+.syntax--string.syntax--regexp {
+  color: #89DDF3;
+}
+.syntax--string.syntax--regexp .syntax--source.syntax--ruby.syntax--embedded {
+  color: #FFCB6B;
+}
+.syntax--string.syntax--other.syntax--link {
+  color: #F07178;
+}
+.syntax--punctuation.syntax--definition.syntax--comment {
+  color: #4f6875;
+}
+.syntax--punctuation.syntax--definition.syntax--array,
+.syntax--punctuation.syntax--definition.syntax--parameters,
+.syntax--punctuation.syntax--definition.syntax--string,
+.syntax--punctuation.syntax--definition.syntax--variable {
+  color: #EEFFFF;
+}
+.syntax--punctuation.syntax--definition.syntax--array.syntax--begin,
+.syntax--punctuation.syntax--definition.syntax--parameters.syntax--begin,
+.syntax--punctuation.syntax--definition.syntax--string.syntax--begin,
+.syntax--punctuation.syntax--definition.syntax--variable.syntax--begin,
+.syntax--punctuation.syntax--definition.syntax--array.syntax--end,
+.syntax--punctuation.syntax--definition.syntax--parameters.syntax--end,
+.syntax--punctuation.syntax--definition.syntax--string.syntax--end,
+.syntax--punctuation.syntax--definition.syntax--variable.syntax--end {
+  color: #89DDF3;
+}
+.syntax--punctuation.syntax--definition.syntax--heading,
+.syntax--punctuation.syntax--definition.syntax--identity {
+  color: #82AAFF;
+}
+.syntax--punctuation.syntax--definition.syntax--bold {
+  color: #FFE082;
+  font-weight: bold;
+}
+.syntax--punctuation.syntax--definition.syntax--italic {
+  color: #C792EA;
+  font-style: italic;
+}
+.syntax--punctuation.syntax--definition.syntax--entity {
+  color: #89DDF3;
+}
+.syntax--punctuation.syntax--section.syntax--array {
+  color: #89DDF3;
+}
+.syntax--punctuation.syntax--section.syntax--embedded {
+  color: #89DDF3;
+}
+.syntax--punctuation.syntax--separator.syntax--key-value {
+  color: #89DDF3;
+}
+.syntax--punctuation.syntax--terminator {
+  color: #89DDF3;
+}
+.syntax--support.syntax--class {
+  color: #FFCB6B;
+}
+.syntax--support.syntax--function {
+  color: #82AAFF;
+}
+.syntax--support.syntax--function.syntax--any-method {
+  color: #82AAFF;
+}
+.syntax--support.syntax--type {
+  color: #FFCB6B;
+}
+.syntax--support.syntax--variable.syntax--dom {
+  color: #FFCB6B;
+}
+.syntax--entity.syntax--name.syntax--function {
+  color: #82AAFF;
+}
+.syntax--entity.syntax--name.syntax--type {
+  color: #EEFFFF;
+}
+.syntax--entity.syntax--other.syntax--inherited-class {
+  color: #C3E88D;
+}
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--pseudo-element {
+  color: #C792EA;
+}
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--attribute {
+  color: #C792EA;
+}
+.syntax--entity.syntax--name.syntax--class,
+.syntax--entity.syntax--name.syntax--type.syntax--class {
+  color: #FFCB6B;
+}
+.syntax--entity.syntax--name.syntax--section {
+  color: #82AAFF;
+}
+.syntax--entity.syntax--name.syntax--tag {
+  color: #F07178;
+}
+.syntax--entity.syntax--other.syntax--attribute-name {
+  color: #FFCB6B;
+}
+.syntax--meta.syntax--class {
+  color: #FFE082;
+}
+.syntax--meta.syntax--delimiter.syntax--period {
+  color: #89DDF3;
+}
+.syntax--meta.syntax--link {
+  color: #FFCB6B;
+}
+.syntax--meta.syntax--require {
+  color: #82AAFF;
+}
+.syntax--meta.syntax--selector {
+  color: #C792EA;
+}
+.syntax--meta.syntax--separator {
+  background-color: #373b41;
+  color: #EEFFFF;
+}
+.syntax--meta.syntax--brace.syntax--round,
+.syntax--meta.syntax--brace.syntax--square {
+  color: #89DDF3;
+}
+.syntax--none {
+  color: #EEFFFF;
+}
+.syntax--markup.syntax--bold {
+  color: #FFCB6B;
+  font-weight: bold;
+}
+.syntax--markup.syntax--changed {
+  color: #C792EA;
+}
+.syntax--markup.syntax--deleted {
+  color: #F07178;
+}
+.syntax--markup.syntax--italic {
+  color: #C792EA;
+  font-style: italic;
+}
+.syntax--markup.syntax--heading .syntax--punctuation.syntax--definition.syntax--heading {
+  color: #82AAFF;
+}
+.syntax--markup.syntax--inserted {
+  color: #C3E88D;
+}
+.syntax--markup.syntax--list {
+  color: #F07178;
+}
+.syntax--markup.syntax--quote {
+  color: #FFCB6B;
+}
+.syntax--markup.syntax--raw.syntax--inline {
+  color: #C3E88D;
+}
+.syntax--source.syntax--gfm .syntax--markup {
+  -webkit-font-smoothing: auto;
+}
+.syntax--source.syntax--gfm .syntax--markup.syntax--heading {
+  color: #C3E88D;
+}
+pre.editor-colors[mini] .scroll-view {
+  padding-left: 1px;
+}
+pre.editor-colors .highlight .region.bracket-matcher {
+  z-index: inherit;
+}
+.bracket-matcher .region {
+  border-bottom: 1px solid #009688;
+  box-sizing: border-box;
+  background-color: rgba(238, 255, 255, 0.1);
+  box-shadow: inset 0 -1px 0 #009688;
+}
+pre.editor-colors .spell-check-misspelling .region {
+  z-index: auto;
+}
+.syntax--jsx.syntax--component {
+  color: #F07178;
+}
+pre.editor-colors .syntax--source.syntax--js.syntax--jsx .syntax--jsx .syntax--entity.syntax--other.syntax--attribute-name {
+  font-style: normal;
+}
+.syntax--css .syntax--support.syntax--constant {
+  color: #89DDF3;
+}
+.syntax--css .syntax--support.syntax--property-name {
+  color: #73d1c8;
+}
+.syntax--css .syntax--keyword.syntax--unit {
+  color: #F78C6A;
+}
+.syntax--css .syntax--constant.syntax--numeric {
+  color: #FFE082;
+}
+.syntax--css .syntax--constant.syntax--color {
+  color: #FFE082;
+}
+.syntax--css .syntax--constant.syntax--color .syntax--punctuation {
+  color: currentColor;
+}
+.syntax--css .syntax--entity.syntax--tag {
+  color: #B2CCD6;
+}
+.syntax--css .syntax--entity.syntax--id {
+  color: #C792EA;
+}
+.syntax--css .syntax--punctuation.syntax--delimiter {
+  color: #89DDF3;
+}
+.syntax--css .syntax--punctuation.syntax--delimiter + .syntax--constant.syntax--numeric:not(.syntax--color) {
+  color: #F78C6A;
+}
+[data-grammar*="gfm"] .syntax--markup.syntax--underline.syntax--link {
+  color: #ff869a;
+}
+[data-grammar*="gfm"] .syntax--markup.syntax--underline.syntax--link span.syntax--punctuation {
+  color: #FF5370;
+}
+[data-grammar*="gfm"] .syntax--markup.syntax--strike {
+  position: relative;
+  color: rgba(238, 255, 255, 0.5);
+}
+[data-grammar*="gfm"] .syntax--markup.syntax--strike::after {
+  content: "";
+  position: absolute;
+  top: calc(54%);
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: rgba(238, 255, 255, 0.5);
+}
+[data-grammar*="gfm"] .syntax--table .syntax--border {
+  color: rgba(238, 255, 255, 0.5);
+}
+[data-grammar*="gfm"] .syntax--markup.syntax--heading {
+  color: #82AAFF;
+}
+[data-grammar*="gfm"] .syntax--punctuation.syntax--definition.syntax--begin,
+[data-grammar*="gfm"] .syntax--punctuation.syntax--definition.syntax--end {
+  color: #82AAFF;
+}
+[data-grammar*="gfm"] .syntax--punctuation.syntax--definition.syntax--begin + span:not(.syntax--function.syntax--parameter) {
+  color: #9cbbff;
+}
+.syntax--html .syntax--meta.syntax--tag.syntax--doctype,
+.syntax--jsx .syntax--meta.syntax--tag.syntax--doctype {
+  color: #C792EA;
+}
+.syntax--html .syntax--punctuation.syntax--tag,
+.syntax--jsx .syntax--punctuation.syntax--tag {
+  color: #89DDF3;
+}
+.syntax--js.syntax--constant {
+  color: #EEFFFF;
+}
+.syntax--js.syntax--support.syntax--variable.syntax--property {
+  color: #EEFFFF;
+}
+.syntax--js.syntax--support.syntax--variable.syntax--property.syntax--dom {
+  color: #82AAFF;
+}
+.syntax--js.syntax--entity.syntax--name.syntax--type {
+  color: #FFCB6B;
+}
+.syntax--js.syntax--variable.syntax--property {
+  color: #82AAFF;
+}
+.syntax--js.syntax--variable.syntax--other.syntax--object {
+  color: #EEFFFF;
+}
+.syntax--js.syntax--variable.syntax--other.syntax--object.syntax--property {
+  color: #82AAFF;
+}
+.syntax--js.syntax--string.syntax--quoted.syntax--template .syntax--other.syntax--object.syntax--property {
+  color: #C3E88D;
+}
+.syntax--js.syntax--constant.syntax--numeric {
+  color: #F78C6A;
+}
+.syntax--js.syntax--constant.syntax--boolean {
+  color: #F07178;
+}
+.syntax--js.syntax--punctuation.syntax--begin,
+.syntax--js.syntax--punctuation.syntax--end,
+.syntax--js.syntax--delimiter.syntax--object.syntax--comma,
+.syntax--js.syntax--brace.syntax--curly {
+  color: #89DDF3;
+}
+.syntax--comment .syntax--js.syntax--punctuation.syntax--begin,
+.syntax--comment .syntax--js.syntax--punctuation.syntax--end,
+.syntax--comment .syntax--js.syntax--delimiter.syntax--object.syntax--comma,
+.syntax--comment .syntax--js.syntax--brace.syntax--curly {
+  color: #4f6875;
+}
+.syntax--js.syntax--export .syntax--variable.syntax--default {
+  color: #C792EA;
+}
+.syntax--json .syntax--meta.syntax--array.syntax--structure .syntax--string.syntax--quoted.syntax--double {
+  color: #C3E88D;
+}
+.syntax--json .syntax--meta.syntax--array.syntax--structure .syntax--string.syntax--quoted.syntax--double > * {
+  color: currentColor;
+}
+.syntax--json .syntax--meta.syntax--array.syntax--structure .syntax--string.syntax--quoted.syntax--double > *.syntax--punctuation.syntax--begin,
+.syntax--json .syntax--meta.syntax--array.syntax--structure .syntax--string.syntax--quoted.syntax--double > *.syntax--punctuation.syntax--end {
+  color: #89DDF3;
+}
+.syntax--json .syntax--meta .syntax--punctuation.syntax--separator.syntax--key-value + .syntax--string.syntax--quoted {
+  color: #C3E88D;
+}
+.syntax--json .syntax--meta .syntax--punctuation.syntax--separator.syntax--key-value + .syntax--string.syntax--quoted * {
+  color: currentColor;
+}
+.syntax--json .syntax--meta .syntax--punctuation.syntax--separator.syntax--key-value + .syntax--string.syntax--quoted *.syntax--punctuation.syntax--begin,
+.syntax--json .syntax--meta .syntax--punctuation.syntax--separator.syntax--key-value + .syntax--string.syntax--quoted *.syntax--punctuation.syntax--end {
+  color: #89DDF3;
+}
+.syntax--json .syntax--meta.syntax--structure.syntax--dictionary .syntax--string.syntax--quoted {
+  color: #C792EA;
+}
+.syntax--json .syntax--meta.syntax--structure.syntax--dictionary .syntax--string.syntax--quoted .syntax--punctuation.syntax--string {
+  color: currentColor;
+}
+.syntax--php.syntax--keyword.syntax--operator.syntax--assignment {
+  color: #C792EA;
+}
+.syntax--php.syntax--meta.syntax--object {
+  color: #82AAFF;
+}
+.syntax--php.syntax--meta.syntax--arguments {
+  color: #C792EA;
+}
+.syntax--python .syntax--meta.syntax--function-call {
+  color: #82AAFF;
+}
+.syntax--python .syntax--meta.syntax--function-call .syntax--punctuation {
+  color: #89DDF3;
+}
+.syntax--python .syntax--meta.syntax--function-call .syntax--arguments {
+  color: #7986CB;
+}
+.syntax--python .syntax--meta.syntax--function-call .syntax--arguments.syntax--punctuation {
+  color: #89DDF3;
+}
+.syntax--python .syntax--variable.syntax--self {
+  color: #FF5370;
+}
+.syntax--python .syntax--meta .syntax--punctuation.syntax--inheritance,
+.syntax--python .syntax--meta .syntax--punctuation.syntax--section {
+  color: #89DDF3;
+}
+.syntax--python .syntax--variable.syntax--parameter {
+  color: #89DDF3;
+}
+.syntax--python .syntax--keyword.syntax--operator {
+  color: #C792EA;
+}
+.syntax--ruby .syntax--punctuation.syntax--separator {
+  color: #89DDF3;
+}
+.syntax--ruby .syntax--variable.syntax--block {
+  color: #F07178;
+}
+.syntax--ruby .syntax--variable.syntax--instance {
+  color: #F07178;
+}
+.syntax--ruby .syntax--variable.syntax--instance .syntax--punctuation {
+  color: currentColor;
+}
+</style>
+        </head>
+        <body class='markdown-preview' data-use-github-style><h1 align="center"><strong>Descriptive and Summary Analysis<br>Using Spreadsheets</strong></h1>
+
+  <h3 align="center">Author: Matthew Sweitzer<br>Email: <a href="mailto:sweitzer.34@osu.edu">sweitzer.34@osu.edu</a><br>Website: <a href="https://www.matthewsweitzer.com">matthewsweitzer.com</a></h3>
+
+<hr>
+
+<p>This document is meant to guide you through some of the basic functions in spreadsheet editing software, like Microsoft Excel, Google Sheets, Apple Numbers, or Libre Calc. The tutorial and linked example data are offered under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons - Attribution</a> license. That means you may use, share, or change it in any way you like -- just make sure that you credit the author if you publish this elsewhere.</p>
+<p>This tutorial relies on an example data set of 15 imagined survey responses. The goal of this example survey is to determine in which state one should run advertisements for the upcoming professional football season to attract viewers who don't currently watch much professional football. This tutorial focuses on descriptive and summary statistics, but I will return to this in a separate tutorial on inference.</p>
+<p>The codebook for this imagined survey is available <a href="https://github.com/Matt-Sweitzer/Comm3163/blob/master/Fall_2020/Example%20Analyses/Codebook.md">here</a>. Users of Microsoft Excel, Google Sheets, Apple Numbers, or Libre Calc should all be able to open the .xlsx file containing the data, which is available <a href="https://github.com/Matt-Sweitzer/Comm3163/blob/master/Fall_2020/Example%20Analyses/ExampleData.xlsx">here</a>. However, because references to other sheets in Numbers follows a different formatting structure, it's recommended that Apple users follow along using the .numbers file available <a href="https://github.com/Matt-Sweitzer/Comm3163/blob/master/Fall_2020/Example%20Analyses/ExampleData.numbers">here</a>.</p>
+<p>As a general rule of thumb, I recommend maintaining the data on one sheet in your file, and running all of your summary analyses (aside from data transformations) on a separate sheet. That way, you are least likely to delete or alter any data. Remember: the results you get are only as good as the data you provide your software. Following proper "data hygiene" is an essential part of research.</p>
+<hr>
+
+<h2 id="data-structure">Data Structure</h2>
+<p>Data from a survey represent a collection of responses from a variety of study participants to a series of survey questions. The results that we get from a study are put into a special format called a "data frame". This frame, much like a picture frame, is rectangular in shape. If you conduct your survey using any of the common online platforms, such as Survey Monkey or Qualtrics, chances are that your data will be in this format when you go to download it. If you are collecting your survey responses on paper, such as with an intercept or mail survey, you will likely need to manually enter your data into a frame format in order to use a computer for your analyses.</p>
+<p>Even though a data frame is rectangular in shape, it's actually made up of a series of rows and columns, or a "matrix". Each "cell", given by a unique combination of row (horizontal) and column (vertical), represents a single data point -- a response by one participant to one question. Let's take a look at the matrix provided in the example data:</p>
+<center> <img width="90%" src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/DataFrame.png"> </center>
+
+<h4 id="rows--participants">Rows == Participants</h4>
+<p>In this data frame, we have 16 rows, each marked with a number 1 through 16. The top row, or 1, is what's called a "header". This header contains the names for each of the variables in our study. The rows below the header (2 through 16) each represent a single participant in our study. In other words, all of the data points contained in row 2 are responses collected from the first survey participant; all of the data points contained in row 3 are responses collected from the second survey participant -- and so on.</p>
+<h4 id="columns--variables">Columns == Variables</h4>
+<p>The data frame also contains 9 columns, marked by capital letters A, B, C, ... I. Each column represents a unique variable in our study. The first one (column A) does not represent responses to a survey question, but contains a number from 1 to 15 to help us identify the unique participant that the row represents. Although this is not technically necessary in a study where each participant provides answers only once (cross-sectional), if we had a longitudinal study where we give the survey to the same respondents at multiple points in time, this can be a really useful way to show that those multiple rows in the data belong to the same person.</p>
+<p><em>Note</em>: If we had more than 26 variables in our data, most spreadsheet software would start using two letters to identify columns; e.g., "AA", "AB", "AC", ... "ZZ". If you have more than 702 variables, the programs will use three letters; "AAA", "AAB", "AAC", ... "ZZZ" -- and so on.</p>
+<h4 id="referencing-data-points">Referencing Data Points</h4>
+<p>When we want to "call", or refer to, certain cells in a function, we'll use the letter followed by the number. For example, <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">C10</code> will tell us what State participant 9 is from -- Michigan. When we want to refer to a collection of data points, we need three things: a starting point, and ending point, and a colon (<code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">:</code>) separating them. For example, <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">A2:I2</code> would give us all of the data points pertaining to participant 1. Likewise, <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">B2:B16</code> would give us all of the ages for all 15 participants.</p>
+<p>Although uncommon, you can also refer to a "rectangle" of data, rather than using a single row or column. Your starting point should be the top-left corner of the rectangle and your ending point should be the bottom-right corner of the rectangle. <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">D7:E9</code> would give us both the Hours_NCAA and Hours_NCAA_Cat for participants 6, 7, and 8.</p>
+<hr>
+
+<h2 id="variable-transformation">Variable Transformation</h2>
+<p>One of the most important functions of spreadsheet software is the ability to transform data from one form to another. In this example, we're going to look at how to transform a ratio numeric variable into a set of ordinal categories. This is a common practice of data simplification, called "binning", which can ease the interpretation of results.</p>
+<blockquote>
+<p>Let's say, for example, that we want to distinguish between high, medium, and low viewership of college football among our sample. While the Hours_NCAA variable tells us <em>exactly</em> how much our participants watch in a typical week, it looks like it's quite varied. To simplify matters, let's classify all participants who watch between 0 and 3 hours as "Low", all participants who watch between 4 and 9 hours as "Medium", and all users who watch more than 9 hours as "High".</p>
+</blockquote>
+<p>Variable transformations, in most circumstances, should take place on the same "sheet" as the original data points. Sheets are a way for the software to compartmentalize your work. They appear as tabs in the user interface -- they are along the bottom in Microsoft Excel, Google Sheets, and Libre Office, while Apple Numbers places these tabs along the top. There are two sheets in the example data linked above: "Survey_Results" and "Analyses". Since our original data appears on the "Survey_Results" sheet, we'll add our new transformations to this sheet.</p>
+<h4 id="column-addition">Column Addition</h4>
+<p>I have already added new columns for the categorical transformations we'll talk about today -- columns E and G. However, if you would like to add your own, it's quite simple:</p>
+<ul>
+<li><p>On Excel, highlight the column that is one to the right of the original variable you would like to transform by clicking on the column letter at the top of the user interface. From the menu, select "Insert", then "Columns".</p>
+</li>
+<li><p>On Google Sheets, hover your mouse over the cell that contains the column letter until a small arrow in a box appears and click the arrow. From the drop-down menu, select "Insert 1 right".</p>
+</li>
+<li><p>On Libre Calc, highlight the entire column containing the original variable by clicking on the column letter. Then from the menu, select "Sheet", then "Insert Columns", then select "Columns After".</p>
+</li>
+<li><p>On Apple Numbers, first click anywhere inside the data frame to bring up the markers on the top and left to indicate columns and rows (respectively). Then hover your mouse over the column letter until a downward arrow appears and click the arrow. From this menu, select "Add Column After".</p>
+</li>
+</ul>
+<h4 id="new-variable-naming">New Variable Naming</h4>
+<p>Once we have a new column for our new variable, we need to make sure to name the variable in the header. In <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">E1</code> you can see that I named this new variable "Hours_NCAA_Cat". It's really important that when you name variables, this new name helps you remember what that variable means. In this case, I'm using the suffix "_Cat" to indicate that this is a categorical tranformation of the variable "Hours_NCAA". If you are creating your own codebook, or dictionary, for your data, don't forget to add the new variable in the same position in the order!</p>
+<h4 id="functions">Functions</h4>
+<p>Then, the next step will be to fill the column with new data. To accomplish this, we could just fill it in manually. This might be easy enough for 15 participants. However, with larger data sets or tired eyes, it's easy to make a mistake. Luckily, we can use the software to help "automate" this process. This automation occurs in the software through something called a "function" (sometimes called "formula"). Functions are a set of rules that are applied with some input to produce a desired output. In our case, we want to take our input of the number of hours of NCAA football watched and output one of "Low", "Medium", or "High", depending on what the input is.</p>
+<p>Functions generally follow the same format in all spreadsheet software: <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=FUNCTION()</code>. The <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=</code> tells the software "I want the cell I'm editing to equal...". <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">FUNCTION</code> provides the name of the function in all caps (e.g., <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">SUM</code>, <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">AVERAGE</code>, <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">IF</code>). There are a wide variety of functions available to users -- I recommend searching Google, or perusing the menus in your software of choice. Finally, the parentheses <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">()</code> are a "wrapper" around the input that the function expects. The input(s) may also be referred to as "parameter(s)". Often when you begin typing your function name, the software will show you a little example of what the function expects for the parameters (Sorry Apple users! Numbers uses the same parameters as the others, but does not show the example). It will definitely take some practice to get comfortable with functions.</p>
+<h4 id="the-if-function">The <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">IF</code> Function</h4>
+<p>The function we'll use for binning is called <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">IF</code>. Let's start by typing the basic function format into the first empty cell of our new column: type <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=IF()</code> into <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">E2</code>.</p>
+<p><code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">IF</code> is a common function across much of computer programming, and you can think of it like a simple test -- IF X is true, do Y, otherwise Z. You could apply this concept to a lot of things in life:</p>
+<blockquote>
+<ul>
+<li>If the traffic light turns green, take my foot off the brake and step on the gas, otherwise keep my foot on the brake.</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>If the bread has mold on it, throw it away and buy new bread, otherwise it's safe to make the sandwich</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>If you are having trouble following the course content, email the professor, otherwise keep doing what you're doing</li>
+</ul>
+</blockquote>
+<p>In the spreadsheet software, we need to provide these <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">IF</code> functions with 3 parameters inside the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">()</code> wrapper. To let the function know that we're done typing one parameter and starting another, we'll separate these with commas <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">,</code>.</p>
+<p>The first parameter <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">IF</code> needs is our test. In our case, we want to see if the cell from the same row in the Hours_NCAA column (<code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">D</code>) is a certain value. Let's start with the "Low" category. We want <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">E2</code> to equal "Low" if <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">D2</code> is less than or equal to 3. For the test "less than or equal to", these software use <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">&lt;=</code> -- search Google for "Excel Comparison Operators" for a complete list. Now we just need to put the cell reference, <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">D2</code>, and the number 3 on either side of that test; type <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">D2&lt;=3</code> inside the parentheses in the cell <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">E2</code>.</p>
+<p>The second parameter the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">IF</code> function needs is what to do when the test is true. This is easy -- we want <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">E2</code> to show the text "Low" when <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">D2&lt;=3</code>, so put a comma followed by <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">"Low"</code> inside the parentheses in <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">E2</code>. Don't forget the quotation marks!</p>
+<p>The third parameter the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">IF</code> function needs is what to do when the test is false. This is really tricky, because we still have two categories left! We need to discern between people who watch between 4 and 9 hours, "Medium", and people who watch more than 9 hours, "High". To accomplish this, we'll need to run another <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">IF</code> test, so for now put a comma followed by <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">IF()</code> inside the parentheses in <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">E2</code>. We'll fill this new set of parentheses in the next step.</p>
+<h4 id="nested-if-functions">Nested <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">IF</code> Functions</h4>
+<p>Sometimes in programming, or in life, we want to run a different test when the first test fails.</p>
+<blockquote>
+<p>Imagine you are walking along one day and you come upon a street magician. On the sidewalk in front of them are three plastic cups that are all face down. The magician places a small rubber ball underneath one of the cups and shuffles the cups on the ground. They tell you that if you can pick which cup contains the ball, they will give you $20. And they're feeling really generous -- they'll give you two chances to pick the right cup. You think it over for a second and you decide to pick the cup on your left. If that cup has the ball in it, then you win $20. If that cup does not have the ball in it, then you need to decide again between the two remaining cups. The first cup did not contain the ball, so now you devise a second test. You think it over and select the cup on your right. If the ball is in this cup, then you get $20. If the ball is not in this cup, then the game is over and you have not won any money. Lucky for you, the ball WAS in the right cup, and you walk away with $20.</p>
+</blockquote>
+<p>To run a second test when the first one fails in spreadsheets, we need to do something called "nesting" in computer science. This means putting a function inside of a function, kind of like nesting dolls. In this case, we want to run a second <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">IF</code> test when the first one fails.</p>
+<p>Inside this second <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">IF</code> test, we again need 3 parameters. For the first parameter, we need our new test. We're still checking the number of hours of college football, so type <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">D2</code> inside the nested parentheses. Now, for the value, our second test is checking to see if a person watches between 4 and 9 hours. Now because everyone who watches less than 4 hours passed the first test, we don't need to worry about writing the lower part of that test. So just add <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">&lt;=9</code> to the first parameter.</p>
+<p>For the second parameter, add a comma and then type <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">"Medium"</code> -- this is the ordinal category which represents 4 to 9 hours. And now for the third parameter, let's consider what's left from our two tests: If the value in column <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">D</code> failed the first test, it must be greater than 3. If the value in column <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">D</code> then also failed the second test, that must mean it's also greater than 9. And as luck would have it, that's exactly what the "High" category describes! So add a comma and <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">"High"</code> inside the nested parentheses. We're done with our formula, so hit Enter on your keyboard (or "done" or "✓" on your iPad) and it should fill in the correct category. If you encounter an error, double check your syntax; <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">E2</code> should contain <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=IF(D2&lt;=3, "Low", IF(D2&lt;=9, "Medium", "High"))</code>.</p>
+<h4 id="expanding-the-functions">Expanding the Functions</h4>
+<p>Now, you could write this new function we just created in every single cell down our new column. But that kind of defeats the purpose of having the function, right? So now we need to tell the spreadsheet software to expand this function to fill the rest of the column.</p>
+<p>There are several ways of doing this, depending on which software and hardware you are using:</p>
+<ul>
+<li><strong>MS Excel, Google Sheets, and Libre Calc users</strong>: click on the cell we just created in the step above. In the bottom-right corner of this cell, you should see a little square. Hover your mouse over that square until you see your cursor turn into a "+" sign (Note: in Excel, it will turn from a white "+" to a black "+" when you are hovering properly). Then, either:<ul>
+<li>Click and drag down the column to the desired row and release, or</li>
+<li>Double click the square to fill the whole column down to the last complete row in the data frame</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>Apple Numbers</strong> is very similar, but it's a little harder to spot. First, click on the cell containing the new formula. Then hover your mouse over the bottom of the cell near the middle. You should see a little golden circle appear. When you hover over that, your cursor should turn into two small arrows, one up and one down. Click and drag down the column to the desired row and release. Numbers does not have the double-click function.</li>
+</ul>
+<ul>
+<li><strong>iPad Users</strong>:<ul>
+<li>Excel: tap the cell with the completed function until the contextual menu shows up. Select "Fill", and then drag the green selection rectangle to cover the column.</li>
+<li>Sheets: first tap the cell with the completed function once, then tap again and drag down to the bottom of the column (row 16). Then tap once more to bring up the contextual menu and select "Autofill".</li>
+<li>Numbers: tap the cell with the completed function twice to bring up the contextual menu. Then select "Cell Actions...", and then "Autofill Cells". Then drag the bottom of the golden rectangle down the column until you reach the bottom of the frame.</li>
+</ul>
+</li>
+</ul>
+<p>Notice that the functions in the cells we just expanded to are somewhat different. For example, the cell in <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">E3</code> references <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">D3</code> instead of <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">D2</code>; <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">E4</code> references <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">D4</code> -- and so on. Spreadsheet software are generally pretty good at figuring out what you were trying to accomplish in expanding the first cell, but sometimes it doesn't work as well. Always double check a few cells to make sure they're correct!</p>
+<hr>
+
+<h2 id="indices">Indices</h2>
+<p>Indices are another useful type of variable transformation; they combine multiple measures into one single measure. This can help you with content validity if those individual variables measure different components of a broad concept. It may also help expedite some of your inferential analyses, which we'll talk about later on this semester.</p>
+<p>There are two main types of indices: sums and means</p>
+<h4 id="summative-index">Summative Index</h4>
+<p>A summative index, or sum, is exactly like it sounds: you simply add up the variables together.</p>
+<blockquote>
+<p>From our football data, let's imagine that we're interested in the total number of hours spent watching football at any level. This could be useful information for advertisers during any football programming, as we could use that to infer how many ads people are exposed to. If someone watches double-digit hours of football, they're watching multiple games, perhaps across different channels or levels of play.</p>
+</blockquote>
+<p>To make a sum index, we'll use the column <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">H</code> in our data frame. Let's call this variable "Total_Hours_Both". Cell <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">H2</code> should represent participant #1's Hours_NCAA (<code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">D2</code>) <em>plus</em> their Hours_NFL (<code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">F2</code>). We can do this in one of two ways:</p>
+<ul>
+<li>We can add them like we would in mathematical notation: <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=D2+F2</code></li>
+<li>We can use the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">SUM</code> function and provide <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">D2</code> and <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">F2</code> as parameters: <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=SUM(D2, F2)</code></li>
+</ul>
+<p>Once you have that sum calculated in <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">H2</code>, expand that function down the rest of the column to fill in the index for the other participants.</p>
+<h4 id="mean-index">Mean Index</h4>
+<p>A mean index is somewhat similar to a summative index, only instead of adding up the values, we'll take the average of them. Averaging is probably more useful when you have three or more variables, as opposed to two, but the principles of the formula construction should translate easily to indices of any size.</p>
+<p>We'll use column <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">I</code> in the data frame for the mean index, and let's call the new variable "Avg_Hours_Both". Cell <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">I2</code> should represent participant #1's Hours_NCAA (<code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">D2</code>) <em>plus</em> their Hours_NFL (<code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">F2</code>), <em>divided by</em> the number of variables in our index (2). Again, we can accomplish the function in one of two ways:</p>
+<ul>
+<li>With mathematical notation: <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=(D2+F2)/2</code></li>
+<li>With the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">AVERAGE</code> function and with <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">D2</code> and <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">F2</code> as parameters: <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=AVERAGE(D2, F2)</code></li>
+</ul>
+<p>Finally, let's expand the cell to fill the column. A quick formatting note before we move to summary statistics: APA and others often expect to see two significant digits reported on all means. To get your software to do the rounding for you:</p>
+<ul>
+<li><strong>MS Excel, Google Sheets, and Libre Calc</strong>: there is a pair of buttons along the top toolbar that shows an arrow pointing in one direction and either expanding or contracting the number of 0's after the decimal place. Select the cell(s) you would like to format then click these buttons until you see the desired number of digits.</li>
+<li><strong>Apple Numbers</strong>: Select the cell or cells you would like to round. In the top-right corner of the window, click the button with the paintbrush icon. Click the tab marked "Cell", then click the up or down arrows on the box next to "Decimals:" until you reach the desired number of digits.</li>
+</ul>
+<hr>
+
+<h2 id="referencing-the-data-sheet-from-the-analysis-sheet">Referencing the Data sheet from the Analysis sheet</h2>
+<p>For the remainder of this tutorial, we're going to be working on the second sheet titled "Analyses". As mentioned above, I strongly encourage you to use a separate sheet for any kind of summary analysis that does not involve transformation. This will help prevent a lot of common accidents in data deletion or unwanted transformation.</p>
+<p>Also mentioned above are the techniques for referencing values in the sheet -- for example, we used <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">D2</code> to make the transformation in <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">E2</code>. That format only works when the function and the referenced cell are on the same sheet, though. Now that we're working on the "Analyses" sheet, we'll need a way to reference data contained on the "Survey_Results" sheet. This follows a different format, depending on which software you are using:</p>
+<ul>
+<li>References to other sheets follow the same format in both MS Excel and Google Sheets: <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">SheetName!Cell(s)</code><ul>
+<li>If we wanted to see what State participant 6 is from, we could use <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=Survey_Results!C7</code></li>
+<li>If we wanted to refer to all participants' ages, we could use <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Survey_Results!B2:B16</code></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>References to other sheets in Libre Calc follow the format <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">$SheetName.Cell(s)</code><ul>
+<li>If we wanted to see what State participant 6 is from, we could use <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=$Survey_Results.C7</code></li>
+<li>If we wanted to refer to all participants' ages, we could use <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">$Survey_Results.B2:B16</code></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>References to other sheets in Apple Numbers can use the format <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">SheetName::TableName::VariableName</code> OR <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">SheetName::TableName::Cell(s)</code>. "TableName" can be set by the user and you can have multiple tables on the same sheet. In the example data available in the .numbers file linked above, all of the data appear on a table named "Data". If you created a new file, I believe the default is just "Table 1".<ul>
+<li>If we wanted to see what State participant 6 is from, we could use <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=Survey_Results::Data::C7</code></li>
+<li>If we wanted to refer to all participants' ages, we could use EITHER <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Survey_Results::Data::B2:B16</code> OR <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Survey_Results::Data::Age</code></li>
+</ul>
+</li>
+</ul>
+<p>With this in mind, let's start building our summary statistics. I have completed examples on the left-hand side of the "Analyses" sheet, and you may follow along or build your own on the right-hand side.</p>
+<hr>
+
+<h2 id="frequency-tables">Frequency Tables</h2>
+<p>Frequency tables are a useful summary tool, especially for categorical variables, as they show how many times each unique value appears in the whole data set. Each row in the table represent a unique value in the variable. These tables have two or three columns:</p>
+<ul>
+<li><em>n</em>, or the raw count (number) of observations with that value</li>
+<li>the percentage of all observations with that value, and</li>
+<li>(if ordered) the cumulative percentage, indicating what proportion of the total observations have that exact value OR MORE/LESS (depending on order)</li>
+</ul>
+<p>Before we dive in, let's look at one example:</p>
+<center> <img width="80%" src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/FreqTable.png"> </center>
+
+<br>
+In the provided example, we'll work through a frequency table of the newly-created Hours_NCAA_Cat variable
+
+<h4 id="n"><em>N</em></h4>
+<p>For this first column, we need to count the number of times each value of the Hours_NCAA_Cat appears. Those values again are "Low", "Medium", and "High".</p>
+<p>To fill these three cells, we'll use the function <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">COUNTIF</code>. This function counts the number of times a set of data points passes a test. It takes two parameters:</p>
+<ul>
+<li>The reference cell(s)</li>
+<li>What the values in those cells should equal to be counted</li>
+</ul>
+<p>In the cell <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">B3</code> on the "Analyses" sheet (B2 for Numbers users), we'll want to count the number of times "Low" appears in the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">E2:E16</code> cells on the "Survey_Results" sheet. Start by typing our function in the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">B3</code> cell: <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=COUNTIF()</code>. Then for the first parameter, we'll need to use the sheet reference described above:</p>
+<ul>
+<li><strong>MS &amp; Google</strong>: <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Survey_Results!E2:E16</code></li>
+<li><strong>Libre Calc</strong>: <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">$Survey_Results.E2:E16</code></li>
+<li><strong>Apple Numbers</strong>: <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Survey_Results::Data::E2:E16</code> or <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Survey_Results::Data::Hours_NCAA_Cat</code></li>
+</ul>
+<p>Then for the second parameter, let's provide what values we would like counted. For the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">B3</code> cell in "Analyses", this should be <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">"Low"</code>. So your overall function should look like: <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=COUNTIF(Survey_Results!E2:E16, "Low")</code>.</p>
+<p>To fill out the other two cells in the column, we can use the exact same formula and just change the test value. For <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">B4</code> (B3 in Numbers), we'll use <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">"Medium"</code> in our test, and for <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">B5</code> (B4 in Numbers), we can simply substitute <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">"High"</code>.</p>
+<p>Before we move to percent, take a look at your n column. Now go back and delete a few of the cells in the Hours_NCAA_Cat column (we can fill them back in later with expansion). Go back to the "Analyses" sheet -- the n column changed! Spreadsheets can handle additions or changes to the data quite easily!</p>
+<h4 id="percent">Percent</h4>
+<p>The percent column should tell you what proportion of your total sample have a certain value for your variable of interest. Percentages are relatively easy to calculate: you divide the number of observations that have the value by the total number of observations in the data set.</p>
+<p>This is easy to accomplish on the "Analyses" sheet -- we don't even need to reference the "Survey_Results" sheet. Just remember the math of a percent:</p>
+<ul>
+<li>Reference the number with the value -- for <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">C3</code> (C2 in Numbers), we'll reference <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">B3</code> (B2 in Numbers)</li>
+<li>Divide that by the total number of observations, or the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">SUM</code> of <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">B3:B5</code></li>
+<li>In other words: <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=B3/SUM(B3:B5)</code></li>
+</ul>
+<p>For "Medium" and "High", we just need to change the numerator in our function</p>
+<ul>
+<li>In <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">C4</code>, enter <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=B4/SUM(B3:B5)</code></li>
+<li>In <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">C5</code>, enter <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=B5/SUM(B3:B5)</code></li>
+</ul>
+<p>When you hit enter, the cell fills with a proportion, not a percentage. To fix that, we'll change the variable type:</p>
+<ul>
+<li><strong>MS Excel, Google Sheets, &amp; Libre Calc:</strong> click the cell or cells you would like to reformat to a percentage, then click the button that looks like a percent sign in the top toolbar. You can also add or remove decimal places using the buttons with the small arrows and zeros.</li>
+<li><strong>Apple Numbers:</strong> click on the cell or cells you would like to reformat to a percentage, then click the button that looks like a paintbrush in the top-right corner of the window. Click on the tab marked "Cell", then under "Data Format" change the drop-down menu from "Automatic" to "Percentage". You can also change the decimal places in this same menu.</li>
+</ul>
+<h4 id="cumulative-percent">Cumulative Percent</h4>
+<p>Cumulative percentage is useful for variables which are ordered in some way. This column tells you what combined percent of your sample has a value that is from that row or any of the rows above it. How you order the table is important here. If you order from low to high, then the cumulative percent reflects what proportion have "at most" the value in the row. If you order from high to low, then cumulative percent reflect the proportion with "at least" that value.</p>
+<p>In a round-about way, this column can also tell you where the median is -- the row which first crosses a cumulative percent of 50% is the median value.</p>
+<p>To fill this column, we'll just need to add the value in the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">C</code> column from the corresponding row and all others that might appear above that one.</p>
+<ul>
+<li>For the first row, this is the same, so enter <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=C3</code> into the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">D3</code> cell (Apple users subtract one from the row number)</li>
+<li>In the second row, we need to add the value in <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">C4</code> to the value in <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">C3</code>: <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=C3+C4</code> or <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=SUM(C3:C4)</code></li>
+<li>Finally, in the third row, add up <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">C3:C5</code>: <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=C3+C4+C5</code> or <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=SUM(C3:C5)</code></li>
+</ul>
+<hr>
+
+<h2 id="descriptive-statistics---central-tendency">Descriptive Statistics - Central Tendency</h2>
+<p>The job of central tendency summary measures is to provide a single value that is most "representative" of all of the values in the full set. What counts as "representative" can differ a lot, in part because of differences in measurement levels. The three central tendency measures are:</p>
+<ul>
+<li><strong>Mode:</strong> The most frequently occuring value (Nominal, Ordinal, Interval, and Ratio)</li>
+<li><strong>Median:</strong> The value in the middle when all of the observations are lined up from low to high (Ordinal, Interval, and Ratio)</li>
+<li><strong>Mean:</strong> The arithmetic average, or the sum of the collection of measured results divided by number of observations (Interval and Ratio)</li>
+</ul>
+<p>In the example analysis, we're going to provide the measures of central tendency for Hours_NCAA. In the .xlsx file, these values will be in <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">B9:D9</code> on the "Analyses" sheet. In the .numbers file, these values will be in the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">B2:D2</code> cells in the table labeled "Example Central Tendency" on the "Analyses" sheet.</p>
+<h4 id="mode">Mode</h4>
+<p>For mode, we'll use the function called <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">MODE</code>. This function takes one parameter: the set of cells from which the mode is drawn. Using the sheet reference described above, we can fill <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">B9</code> with <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=MODE(Survey_Results!D2:D16)</code> (or the equivalent for other software).</p>
+<h4 id="median">Median</h4>
+<p>Finding the median is similarly easy: we'll use the function called <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">MEDIAN</code> and provide the same reference cells as the only parameter. We get: <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=MEDIAN(Survey_Results!D2:D16)</code>.</p>
+<p>A quick note on medians: if you are attempting to use <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">MEDIAN</code> on an ordinal measure, you will need to convert your codes to numbers. Spreadsheet software are not able to assign an order to text labels. For example, if we wanted to use <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">MEDIAN</code> on one of the new "_Cat" variables, we could use 1 instead of "Low", 2 instead of "Medium", and 3 instead of "High". This should be pretty easy to do with some small changes to the transformation code above (e.g., <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=IF(D2&lt;=3, 1, IF(D2&lt;=9, 2, 3))</code>)</p>
+<h4 id="mean">Mean</h4>
+<p>The function for the arithmetic mean is <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">AVERAGE</code>, but you could also use <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">SUM</code> to add the cells and then divide by the number of observations -- both would get you the same result. Using the latter technique, we get: <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=AVERAGE(Survey_Results!D2:D16)</code>.</p>
+<p>Just keep in mind that this is sometimes called a "sample mean", because it's the mean of the whole sample, and that is different from the mean index described above. You <em>can</em> have a sample mean of a mean index. After making that index above, take the sample mean of it by using the following: <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=AVERAGE(Survey_Results!I2:I16)</code>.</p>
+<center> <img width="80%" src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/CentralT.png"> </center>
+
+<hr>
+
+<h2 id="descriptive-statistics---dispersion">Descriptive Statistics - Dispersion</h2>
+<p>The role of dispersion statistics is to demonstrate how wide-spread the values are, sometimes in relation to a measure of central tendency. There are several takes on dispersion measures, but the most common three are:</p>
+<ul>
+<li><strong>Range:</strong> Either the minimum and maximum values, or the difference between them -- most report the former</li>
+<li><strong>Variance:</strong> The average squared differences of each value from the mean of the distribution -- not often reported, but very important for inference</li>
+<li><strong>Standard Deviation:</strong> How far, on average, each value is from the mean of the distribution -- also the square root of variance, in the same units as the original measure so much more common</li>
+</ul>
+<p>In the example analysis, we're going to provide the measures of dispersion for Hours_NCAA. In the .xlsx file, these values will be in <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">B13:D13</code> on the "Analyses" sheet. In the .numbers file, these values will be in the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">B2:D2</code> cells in the table labeled "Example Dispersion" on the "Analyses" sheet.</p>
+<h4 id="range">Range</h4>
+<p>There is no single built-in function for either definition of range. The first definition contains two values: the minimum (<code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=MIN()</code>) and the maximum (<code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=MAX()</code>). Those two functions will take the same referenced cells we used for central tendency above. To find the second definition of range, we'll need to as the software to do some math: subtract the minimum value from the maximum value. Doing that, we get range with the formula <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=MAX(Survey_Results!D2:D16)-MIN(Survey_Results!D2:D16)</code></p>
+<h4 id="variance">Variance</h4>
+<p>Getting the variance is comparatively easier: we just need to use the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">VAR</code> function with the same referenced cells, or <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=VAR(Survey_Results!D2:D16)</code></p>
+<h4 id="standard-deviation">Standard Deviation</h4>
+<p>Standard deviation is likewise easy to calculate: <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">=STDEV(Survey_Results!D2:D16)</code></p>
+<center> <img width="80%" src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/Dispersion.png"> </center></body>
+      </html>
