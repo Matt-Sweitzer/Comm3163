@@ -1,0 +1,803 @@
+      <!DOCTYPE html>
+      <html>
+        <head>
+            <meta charset="utf-8" />
+            <title>JASP_CheatSheet</title>
+            <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(238, 255, 255); background-color: rgb(38, 50, 56); overflow: auto; }
+.markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) strong { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) del { color: rgb(156, 255, 255); }
+.markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: rgb(0, 150, 136); }
+.markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(156, 255, 255); border-color: rgb(71, 93, 105); border-width: 4px; }
+.markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top: 2px dashed rgb(71, 93, 105); background: none; }
+.markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview:not([data-use-github-style]) th { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(71, 93, 105); }
+.markdown-preview:not([data-use-github-style]) code { color: rgb(255, 255, 255); background-color: rgb(54, 72, 80); }
+.markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(46, 61, 68); }
+.markdown-preview:not([data-use-github-style]) kbd { color: rgb(255, 255, 255); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(71, 93, 105) rgb(71, 93, 105) rgb(59, 77, 86); border-image: initial; background-color: rgb(54, 72, 80); }
+.markdown-preview[data-use-github-style] { font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif; line-height: 1.6; overflow-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); background-color: rgb(255, 255, 255); overflow: scroll; }
+.markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; }
+.markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left: 4px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] table tr { background-color: rgb(255, 255, 255); border-top: 1px solid rgb(204, 204, 204); }
+.markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; background-color: rgba(0, 0, 0, 0.04); border-radius: 3px; }
+.markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; background: transparent; border: 0px; }
+.markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border-radius: 3px; }
+.markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview[data-use-github-style] pre { overflow-wrap: normal; }
+.markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; overflow-wrap: normal; background-color: transparent; border: 0px; }
+.markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; background-color: rgb(252, 252, 252); border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-image: initial; border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; }
+.markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview[data-use-github-style] code { color: inherit; }
+.markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.markdown-preview pre.editor-colors { user-select: auto; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover .horizontal-scrollbar { visibility: visible; }
+.markdown-preview .task-list-item input[type="checkbox"] { position: absolute; margin: 0.25em 0px 0px -1.4em; }
+.markdown-preview .task-list-item { list-style-type: none; }
+.markdown-preview code { text-shadow: none; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+.line-number.bracket-matcher.bracket-matcher {
+  color: rgba(238, 255, 255, 0.2);
+  background-color: #1c2429;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+.spell-check-corrections {
+  width: 25em !important;
+}
+
+pre.editor-colors {
+  background-color: #263238;
+  color: #EEFFFF;
+}
+pre.editor-colors .wrap-guide {
+  background-color: #2b3940;
+}
+pre.editor-colors .indent-guide {
+  color: #2b3940;
+}
+pre.editor-colors .invisible-character {
+  color: #373b41;
+}
+pre.editor-colors .cursor-line {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+pre.editor-colors .gutter {
+  background-color: #263238;
+  color: rgba(238, 255, 255, 0.2);
+}
+pre.editor-colors .gutter .line-number.cursor-line {
+  background-color: #212b30;
+  color: rgba(238, 255, 255, 0.2);
+}
+pre.editor-colors .gutter .line-number.cursor-line-no-selection {
+  color: rgba(238, 255, 255, 0.2);
+}
+pre.editor-colors .fold-marker:after,
+pre.editor-colors .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after {
+  color: #B2CCD6;
+}
+pre.editor-colors .invisible {
+  color: #EEFFFF;
+}
+pre.editor-colors .cursor {
+  color: #009688;
+  border-width: 2px;
+}
+pre.editor-colors .selection .region {
+  background-color: #3b4d56;
+}
+pre.editor-colors .search-results .syntax--marker .region {
+  background-color: transparent;
+  border: 1px solid #B2CCD6;
+}
+pre.editor-colors .search-results .syntax--marker.current-result .region {
+  border: 1px solid white;
+}
+.syntax--comment {
+  color: #4f6875;
+}
+.syntax--keyword {
+  color: #C792EA;
+}
+.syntax--keyword.syntax--control {
+  color: #C792EA;
+}
+.syntax--keyword.syntax--control.syntax--elements {
+  color: #B2CCD6;
+}
+.syntax--keyword.syntax--operator {
+  color: #89DDF3;
+}
+.syntax--keyword.syntax--other.syntax--special-method {
+  color: #82AAFF;
+}
+.syntax--keyword.syntax--other.syntax--unit {
+  color: #FFCB6B;
+}
+.syntax--storage {
+  color: #C792EA;
+}
+.syntax--constant {
+  color: #F07178;
+}
+.syntax--constant.syntax--character.syntax--escape {
+  color: #89DDF3;
+}
+.syntax--constant.syntax--numeric {
+  color: #F78C6A;
+}
+.syntax--constant.syntax--other.syntax--color {
+  color: #89DDF3;
+}
+.syntax--constant.syntax--other.syntax--symbol {
+  color: #C3E88D;
+}
+.syntax--constant.syntax--language.syntax--null {
+  color: #FF5370;
+}
+.syntax--variable {
+  color: #EEFFFF;
+}
+.syntax--variable.syntax--interpolation {
+  color: #eb434c;
+}
+.syntax--variable.syntax--parameter.syntax--function {
+  color: #F78C6A;
+}
+.syntax--variable.syntax--language {
+  color: #FF5370;
+}
+.syntax--variable.syntax--variable.syntax--object {
+  color: #FFCB6B;
+}
+.syntax--invalid.syntax--illegal {
+  background-color: #F07178;
+  color: #263238;
+}
+.syntax--string {
+  color: #C3E88D;
+}
+.syntax--string.syntax--regexp {
+  color: #89DDF3;
+}
+.syntax--string.syntax--regexp .syntax--source.syntax--ruby.syntax--embedded {
+  color: #FFCB6B;
+}
+.syntax--string.syntax--other.syntax--link {
+  color: #F07178;
+}
+.syntax--punctuation.syntax--definition.syntax--comment {
+  color: #4f6875;
+}
+.syntax--punctuation.syntax--definition.syntax--array,
+.syntax--punctuation.syntax--definition.syntax--parameters,
+.syntax--punctuation.syntax--definition.syntax--string,
+.syntax--punctuation.syntax--definition.syntax--variable {
+  color: #EEFFFF;
+}
+.syntax--punctuation.syntax--definition.syntax--array.syntax--begin,
+.syntax--punctuation.syntax--definition.syntax--parameters.syntax--begin,
+.syntax--punctuation.syntax--definition.syntax--string.syntax--begin,
+.syntax--punctuation.syntax--definition.syntax--variable.syntax--begin,
+.syntax--punctuation.syntax--definition.syntax--array.syntax--end,
+.syntax--punctuation.syntax--definition.syntax--parameters.syntax--end,
+.syntax--punctuation.syntax--definition.syntax--string.syntax--end,
+.syntax--punctuation.syntax--definition.syntax--variable.syntax--end {
+  color: #89DDF3;
+}
+.syntax--punctuation.syntax--definition.syntax--heading,
+.syntax--punctuation.syntax--definition.syntax--identity {
+  color: #82AAFF;
+}
+.syntax--punctuation.syntax--definition.syntax--bold {
+  color: #FFE082;
+  font-weight: bold;
+}
+.syntax--punctuation.syntax--definition.syntax--italic {
+  color: #C792EA;
+  font-style: italic;
+}
+.syntax--punctuation.syntax--definition.syntax--entity {
+  color: #89DDF3;
+}
+.syntax--punctuation.syntax--section.syntax--array {
+  color: #89DDF3;
+}
+.syntax--punctuation.syntax--section.syntax--embedded {
+  color: #89DDF3;
+}
+.syntax--punctuation.syntax--separator.syntax--key-value {
+  color: #89DDF3;
+}
+.syntax--punctuation.syntax--terminator {
+  color: #89DDF3;
+}
+.syntax--support.syntax--class {
+  color: #FFCB6B;
+}
+.syntax--support.syntax--function {
+  color: #82AAFF;
+}
+.syntax--support.syntax--function.syntax--any-method {
+  color: #82AAFF;
+}
+.syntax--support.syntax--type {
+  color: #FFCB6B;
+}
+.syntax--support.syntax--variable.syntax--dom {
+  color: #FFCB6B;
+}
+.syntax--entity.syntax--name.syntax--function {
+  color: #82AAFF;
+}
+.syntax--entity.syntax--name.syntax--type {
+  color: #EEFFFF;
+}
+.syntax--entity.syntax--other.syntax--inherited-class {
+  color: #C3E88D;
+}
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--pseudo-element {
+  color: #C792EA;
+}
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--attribute {
+  color: #C792EA;
+}
+.syntax--entity.syntax--name.syntax--class,
+.syntax--entity.syntax--name.syntax--type.syntax--class {
+  color: #FFCB6B;
+}
+.syntax--entity.syntax--name.syntax--section {
+  color: #82AAFF;
+}
+.syntax--entity.syntax--name.syntax--tag {
+  color: #F07178;
+}
+.syntax--entity.syntax--other.syntax--attribute-name {
+  color: #FFCB6B;
+}
+.syntax--meta.syntax--class {
+  color: #FFE082;
+}
+.syntax--meta.syntax--delimiter.syntax--period {
+  color: #89DDF3;
+}
+.syntax--meta.syntax--link {
+  color: #FFCB6B;
+}
+.syntax--meta.syntax--require {
+  color: #82AAFF;
+}
+.syntax--meta.syntax--selector {
+  color: #C792EA;
+}
+.syntax--meta.syntax--separator {
+  background-color: #373b41;
+  color: #EEFFFF;
+}
+.syntax--meta.syntax--brace.syntax--round,
+.syntax--meta.syntax--brace.syntax--square {
+  color: #89DDF3;
+}
+.syntax--none {
+  color: #EEFFFF;
+}
+.syntax--markup.syntax--bold {
+  color: #FFCB6B;
+  font-weight: bold;
+}
+.syntax--markup.syntax--changed {
+  color: #C792EA;
+}
+.syntax--markup.syntax--deleted {
+  color: #F07178;
+}
+.syntax--markup.syntax--italic {
+  color: #C792EA;
+  font-style: italic;
+}
+.syntax--markup.syntax--heading .syntax--punctuation.syntax--definition.syntax--heading {
+  color: #82AAFF;
+}
+.syntax--markup.syntax--inserted {
+  color: #C3E88D;
+}
+.syntax--markup.syntax--list {
+  color: #F07178;
+}
+.syntax--markup.syntax--quote {
+  color: #FFCB6B;
+}
+.syntax--markup.syntax--raw.syntax--inline {
+  color: #C3E88D;
+}
+.syntax--source.syntax--gfm .syntax--markup {
+  -webkit-font-smoothing: auto;
+}
+.syntax--source.syntax--gfm .syntax--markup.syntax--heading {
+  color: #C3E88D;
+}
+pre.editor-colors[mini] .scroll-view {
+  padding-left: 1px;
+}
+pre.editor-colors .highlight .region.bracket-matcher {
+  z-index: inherit;
+}
+.bracket-matcher .region {
+  border-bottom: 1px solid #009688;
+  box-sizing: border-box;
+  background-color: rgba(238, 255, 255, 0.1);
+  box-shadow: inset 0 -1px 0 #009688;
+}
+pre.editor-colors .spell-check-misspelling .region {
+  z-index: auto;
+}
+.syntax--jsx.syntax--component {
+  color: #F07178;
+}
+pre.editor-colors .syntax--source.syntax--js.syntax--jsx .syntax--jsx .syntax--entity.syntax--other.syntax--attribute-name {
+  font-style: normal;
+}
+.syntax--css .syntax--support.syntax--constant {
+  color: #89DDF3;
+}
+.syntax--css .syntax--support.syntax--property-name {
+  color: #73d1c8;
+}
+.syntax--css .syntax--keyword.syntax--unit {
+  color: #F78C6A;
+}
+.syntax--css .syntax--constant.syntax--numeric {
+  color: #FFE082;
+}
+.syntax--css .syntax--constant.syntax--color {
+  color: #FFE082;
+}
+.syntax--css .syntax--constant.syntax--color .syntax--punctuation {
+  color: currentColor;
+}
+.syntax--css .syntax--entity.syntax--tag {
+  color: #B2CCD6;
+}
+.syntax--css .syntax--entity.syntax--id {
+  color: #C792EA;
+}
+.syntax--css .syntax--punctuation.syntax--delimiter {
+  color: #89DDF3;
+}
+.syntax--css .syntax--punctuation.syntax--delimiter + .syntax--constant.syntax--numeric:not(.syntax--color) {
+  color: #F78C6A;
+}
+[data-grammar*="gfm"] .syntax--markup.syntax--underline.syntax--link {
+  color: #ff869a;
+}
+[data-grammar*="gfm"] .syntax--markup.syntax--underline.syntax--link span.syntax--punctuation {
+  color: #FF5370;
+}
+[data-grammar*="gfm"] .syntax--markup.syntax--strike {
+  position: relative;
+  color: rgba(238, 255, 255, 0.5);
+}
+[data-grammar*="gfm"] .syntax--markup.syntax--strike::after {
+  content: "";
+  position: absolute;
+  top: calc(54%);
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: rgba(238, 255, 255, 0.5);
+}
+[data-grammar*="gfm"] .syntax--table .syntax--border {
+  color: rgba(238, 255, 255, 0.5);
+}
+[data-grammar*="gfm"] .syntax--markup.syntax--heading {
+  color: #82AAFF;
+}
+[data-grammar*="gfm"] .syntax--punctuation.syntax--definition.syntax--begin,
+[data-grammar*="gfm"] .syntax--punctuation.syntax--definition.syntax--end {
+  color: #82AAFF;
+}
+[data-grammar*="gfm"] .syntax--punctuation.syntax--definition.syntax--begin + span:not(.syntax--function.syntax--parameter) {
+  color: #9cbbff;
+}
+.syntax--html .syntax--meta.syntax--tag.syntax--doctype,
+.syntax--jsx .syntax--meta.syntax--tag.syntax--doctype {
+  color: #C792EA;
+}
+.syntax--html .syntax--punctuation.syntax--tag,
+.syntax--jsx .syntax--punctuation.syntax--tag {
+  color: #89DDF3;
+}
+.syntax--js.syntax--constant {
+  color: #EEFFFF;
+}
+.syntax--js.syntax--support.syntax--variable.syntax--property {
+  color: #EEFFFF;
+}
+.syntax--js.syntax--support.syntax--variable.syntax--property.syntax--dom {
+  color: #82AAFF;
+}
+.syntax--js.syntax--entity.syntax--name.syntax--type {
+  color: #FFCB6B;
+}
+.syntax--js.syntax--variable.syntax--property {
+  color: #82AAFF;
+}
+.syntax--js.syntax--variable.syntax--other.syntax--object {
+  color: #EEFFFF;
+}
+.syntax--js.syntax--variable.syntax--other.syntax--object.syntax--property {
+  color: #82AAFF;
+}
+.syntax--js.syntax--string.syntax--quoted.syntax--template .syntax--other.syntax--object.syntax--property {
+  color: #C3E88D;
+}
+.syntax--js.syntax--constant.syntax--numeric {
+  color: #F78C6A;
+}
+.syntax--js.syntax--constant.syntax--boolean {
+  color: #F07178;
+}
+.syntax--js.syntax--punctuation.syntax--begin,
+.syntax--js.syntax--punctuation.syntax--end,
+.syntax--js.syntax--delimiter.syntax--object.syntax--comma,
+.syntax--js.syntax--brace.syntax--curly {
+  color: #89DDF3;
+}
+.syntax--comment .syntax--js.syntax--punctuation.syntax--begin,
+.syntax--comment .syntax--js.syntax--punctuation.syntax--end,
+.syntax--comment .syntax--js.syntax--delimiter.syntax--object.syntax--comma,
+.syntax--comment .syntax--js.syntax--brace.syntax--curly {
+  color: #4f6875;
+}
+.syntax--js.syntax--export .syntax--variable.syntax--default {
+  color: #C792EA;
+}
+.syntax--json .syntax--meta.syntax--array.syntax--structure .syntax--string.syntax--quoted.syntax--double {
+  color: #C3E88D;
+}
+.syntax--json .syntax--meta.syntax--array.syntax--structure .syntax--string.syntax--quoted.syntax--double > * {
+  color: currentColor;
+}
+.syntax--json .syntax--meta.syntax--array.syntax--structure .syntax--string.syntax--quoted.syntax--double > *.syntax--punctuation.syntax--begin,
+.syntax--json .syntax--meta.syntax--array.syntax--structure .syntax--string.syntax--quoted.syntax--double > *.syntax--punctuation.syntax--end {
+  color: #89DDF3;
+}
+.syntax--json .syntax--meta .syntax--punctuation.syntax--separator.syntax--key-value + .syntax--string.syntax--quoted {
+  color: #C3E88D;
+}
+.syntax--json .syntax--meta .syntax--punctuation.syntax--separator.syntax--key-value + .syntax--string.syntax--quoted * {
+  color: currentColor;
+}
+.syntax--json .syntax--meta .syntax--punctuation.syntax--separator.syntax--key-value + .syntax--string.syntax--quoted *.syntax--punctuation.syntax--begin,
+.syntax--json .syntax--meta .syntax--punctuation.syntax--separator.syntax--key-value + .syntax--string.syntax--quoted *.syntax--punctuation.syntax--end {
+  color: #89DDF3;
+}
+.syntax--json .syntax--meta.syntax--structure.syntax--dictionary .syntax--string.syntax--quoted {
+  color: #C792EA;
+}
+.syntax--json .syntax--meta.syntax--structure.syntax--dictionary .syntax--string.syntax--quoted .syntax--punctuation.syntax--string {
+  color: currentColor;
+}
+.syntax--php.syntax--keyword.syntax--operator.syntax--assignment {
+  color: #C792EA;
+}
+.syntax--php.syntax--meta.syntax--object {
+  color: #82AAFF;
+}
+.syntax--php.syntax--meta.syntax--arguments {
+  color: #C792EA;
+}
+.syntax--python .syntax--meta.syntax--function-call {
+  color: #82AAFF;
+}
+.syntax--python .syntax--meta.syntax--function-call .syntax--punctuation {
+  color: #89DDF3;
+}
+.syntax--python .syntax--meta.syntax--function-call .syntax--arguments {
+  color: #7986CB;
+}
+.syntax--python .syntax--meta.syntax--function-call .syntax--arguments.syntax--punctuation {
+  color: #89DDF3;
+}
+.syntax--python .syntax--variable.syntax--self {
+  color: #FF5370;
+}
+.syntax--python .syntax--meta .syntax--punctuation.syntax--inheritance,
+.syntax--python .syntax--meta .syntax--punctuation.syntax--section {
+  color: #89DDF3;
+}
+.syntax--python .syntax--variable.syntax--parameter {
+  color: #89DDF3;
+}
+.syntax--python .syntax--keyword.syntax--operator {
+  color: #C792EA;
+}
+.syntax--ruby .syntax--punctuation.syntax--separator {
+  color: #89DDF3;
+}
+.syntax--ruby .syntax--variable.syntax--block {
+  color: #F07178;
+}
+.syntax--ruby .syntax--variable.syntax--instance {
+  color: #F07178;
+}
+.syntax--ruby .syntax--variable.syntax--instance .syntax--punctuation {
+  color: currentColor;
+}
+</style>
+        </head>
+        <body class='markdown-preview' data-use-github-style><h1 align="center"><strong>Data Analysis Using JASP</strong></h1>
+
+  <h3 align="center">Author: Matthew Sweitzer<br>Email: <a href="mailto:sweitzer.34@osu.edu">sweitzer.34@osu.edu</a><br>Website: <a href="https://www.matthewsweitzer.com">matthewsweitzer.com</a></h3>
+
+<hr>
+
+<p>This document is meant to guide you through some of the basic functions in the <a href="https://jasp-stats.org">JASP statistical software</a>. The tutorial and linked example data are offered under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons - Attribution</a> license. That means you may use, share, or change it in any way you like -- just make sure that you credit the author if you publish this elsewhere.</p>
+<p>This tutorial relies on an example data set of 15 imagined survey responses. The goal of this example survey is to determine in which state one should run advertisements for the upcoming professional football season to attract viewers who don't currently watch much professional football. This tutorial focuses on descriptive and summary statistics, but I will return to this in a separate tutorial on inference.</p>
+<p>The codebook for this imagined survey is available <a href="https://github.com/Matt-Sweitzer/Comm3163/blob/master/Fall_2020/Example%20Analyses/Codebook.md">here</a>. Some parts of this tutorial assume that you have already completed the tutorial on spreadsheet software available <a href="https://github.com/Matt-Sweitzer/Comm3163/blob/master/Fall_2020/Example%20Analyses/SpreadsheetCheatSheet.md">here</a>. This tutorial uses the same dataset, however because JASP is incapable of opening Excel files, I have converted it to a .csv file for you, which you can download <a href="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/ExampleData.csv">here</a> (Note: right-click "here", download or save linked file). If you prefer to skip the part where we convert the measurement classes of each variable, you can download the .jasp file <a href="https://github.com/Matt-Sweitzer/Comm3163/blob/master/Fall_2020/Example%20Analyses/ExampleData.jasp">here</a>.</p>
+<hr>
+
+<h2 id="jasp-gui">JASP GUI</h2>
+<p>JASP is software designed by researchers at the University of Amsterdam. It is meant to make data transformation and statistical analyses as straight-forward as possible. That said, it acts as a graphical user interface (GUI) overlay for the <a href="https://r-project.org">R statistical software</a>, which is a tremendously powerful program capable of running a variety of data analytic functions -- everything from descriptive statistics up to machine learning and web or API scraping. Not all of that functionality works in JASP. However, most of the basic functions you would need for communication industry research are implemented and it is considerably easier to use than R.</p>
+<p>When you first open the application, you'll see the window pictured below. The three horizontal lines in the top left corner of the window (circled in red) opens up the menu. Let's read in the csv file linked above by selecting "Open", then "Computer", and "Browse". Find the downloaded csv file (for me, this was sent to the "Downloads" folder by default). Select the file and click "Open".</p>
+<center> <img width="90%" src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/JASP_GUI.png"> </center>
+
+<h2 id="data-structure">Data Structure</h2>
+<p>Data from a survey represent a collection of responses from a variety of study participants to a series of survey questions. The results that we get from a study are put into a special format called a "data frame". This frame, much like a picture frame, is rectangular in shape. If you conduct your survey using any of the common online platforms, such as Survey Monkey or Qualtrics, chances are that your data will be in this format when you go to download it. If you are collecting your survey responses on paper, such as with an intercept or mail survey, you will likely need to manually enter your data into a frame format in order to use a computer for your analyses.</p>
+<p>Even though a data frame is rectangular in shape, it's actually made up of a series of rows and columns, or a "matrix". Each "cell", given by a unique combination of row (horizontal) and column (vertical), represents a single data point -- a response by one participant to one question. This should look similar to the data frame we used in the spreadsheet tutorial, but now it's completed. Let's take a look at the matrix provided in the example data:</p>
+<center> <img width="90%" src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/DataFrame_JASP.png"> </center>
+
+<h4 id="rows--participants">Rows == Participants</h4>
+<p>In this data frame, we have 15 rows, each marked with a number 1 through 15. Unlike in the spreadsheet software, JASP assumes we have a header row in our data when we open it, and it does not provide a number for the header row. This header contains the names for each of the variables in our study. The rows below the header (1 through 15) each represent a single participant in our study. In other words, all of the data points contained in row 1 are responses collected from the first survey participant; all of the data points contained in row 2 are responses collected from the second survey participant -- and so on.</p>
+<h4 id="columns--variables">Columns == Variables</h4>
+<p>The data frame also contains 9 columns, each representing a unique variable in our study. These are named now, unlike when we used the spreadsheet software and they had capital letters indicating each column. The first column ("Participant") does not represent responses to a survey question, but contains a number from 1 to 15 to help us identify the unique participant that the row represents. Although this is not technically necessary in a study where each participant provides answers only once (cross-sectional), if we had a longitudinal study where we give the survey to the same respondents at multiple points in time, this can be a really useful way to show that those multiple rows in the data belong to the same person.</p>
+<p>Next to each variable name in the header row, you'll see one of four icons:</p>
+<ul>
+<li>A measuring tape (orange bar) indicating that the variable is encoded as some form of numeric, or "scale" measurement -- either ratio or interval</li>
+<li>A bar chart (gray, orange, and blue vertical bars of increasing height) indicating that the variable is encoded as ordinal categories</li>
+<li>A Venn diagram (grey, orange, and blue circles):<ul>
+<li>(without a small "a" in the blue circle) indicating that the variable is encoded as nominal categories, represented by a number</li>
+<li>(with a small "a" in the blue circle) indicating that the variable is encoded as nominal categories, represented by text</li>
+</ul>
+</li>
+</ul>
+<p>When opening a csv data file for the first time, JASP will attempt to determine the encodings automatically. Sometimes this works well, while other times it does not. You can change the encoding manually by clicking on the icon to bring down a menu with the three options (nominal will automatically determine whether the data contained in the column are numbers or text). Make sure that the variables are encoded correctly:</p>
+
+<center>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th align="center">Class</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Participant</td>
+<td align="center">Nominal</td>
+</tr>
+<tr>
+<td>Age</td>
+<td align="center">Scale</td>
+</tr>
+<tr>
+<td>State</td>
+<td align="center">Nominal</td>
+</tr>
+<tr>
+<td>Hours_NCAA</td>
+<td align="center">Scale</td>
+</tr>
+<tr>
+<td>Hours_NCAA_Cat</td>
+<td align="center">Ordinal</td>
+</tr>
+<tr>
+<td>Hours_NFL</td>
+<td align="center">Scale</td>
+</tr>
+<tr>
+<td>Hours_NFL_Cat</td>
+<td align="center">Ordinal</td>
+</tr>
+<tr>
+<td>Total_Hours_Both</td>
+<td align="center">Scale</td>
+</tr>
+<tr>
+<td>Avg_Hours_Both</td>
+<td align="center">Scale</td>
+</tr>
+</tbody></table>
+</center>
+
+<p>For ordinal variables, sometimes it helps to make sure that your categories are in the correct order. Here we have three categories in our two ordinal variables <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Hours_NCAA</code> and <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Hours_NFL</code> -- marked 1, 2, and 3, representing "Low", "Medium", and "High" respectively. We created these in the spreadsheet tutorial, but this tutorial will cover that as well. To alter the categories, their labels, and their order, simply click on the variable name in the header row. This will bring up a contextual menu with each unique value and an editable "label" column. Type in "Low" for label in the 1 row, "Medium" in the 2 row, and "High" in the 3 row:</p>
+<center> <img width="90%" src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/JASP_Ordinal.png"> </center>
+
+<p>We could reorder these values if we wanted to -- we don't need to because the default is in the correct order, but imagine that our analysis asked what leads people to watch <em>less</em> football. We could reverse-code all categories by clicking the button on the right with both an up and a down arrow. You could also move individual categories up and down by clicking on the row with the category you want to move, and then clicking the "up" or "down" arrows. You can also filter results by the value of a variable by clicking on the checkmark on the left side of this window. "X" means that the participants with that value will be hidden from the results.</p>
+<hr>
+
+<h2 id="variable-transformation">Variable Transformation</h2>
+<p>In the spreadsheet tutorial, we looked at how to transform a ratio numeric variable into a set of ordinal categories. This is a common practice of data simplification, called "binning", which can ease the interpretation of results.</p>
+<blockquote>
+<p>Let's say, for example, that we want to distinguish between high, medium, and low viewership of college football among our sample. While the Hours_NCAA variable tells us <em>exactly</em> how much our participants watch in a typical week, it looks like it's quite varied. To simplify matters, let's classify all participants who watch between 0 and 3 hours as "Low", all participants who watch between 4 and 9 hours as "Medium", and all users who watch more than 9 hours as "High".</p>
+</blockquote>
+<p>Although those two binned transformations (<code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Hours_NCAA_Cat</code> and <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Hours_NFL_Cat</code>) that we created before are present in the current dataset, you might still need to know how to perform the same transformations in JASP.</p>
+<h4 id="column-addition">Column Addition</h4>
+<p>To add a new column for your new variable, simply click the "+" icon on the right-hand side of the header row. Unfortunately, this will always add a new column on the right-most side of your data frame -- as far as I know, there is no way to reorder variables.</p>
+<h4 id="new-variable-naming">New Variable Naming</h4>
+<p>Once we have a new column for our new variable, we need to make sure to name the variable in the header. Let's recreate our "Hours_NCAA_Cat" variable in JASP. You can call this new variable "Hours_NCAA_Cat_New".</p>
+<p>Below "Name:", you will see several options. First, choose between implementing the new computed column using <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">R</code> code, or the hand icon represent point-and-click in the GUI. I highly recommend using the GUI option unless you are very familiar with programming in <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">R</code>. Even if you are, there are some nuances to JASP's implementation, such as not being able to call custom functions or those implemented in packages that are not included in the default JASP distribution.</p>
+<p>Finally, choose what measurement type the new variable should take on. For "Hours_NCAA_Cat_New", we'll choose "Ordinal". Once all of those components are filled out, click "Create Column" to bring up the function editor.</p>
+<center> <img width="40%" src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/JASP_NewVar.png"> </center>
+
+<h4 id="functions">Functions</h4>
+<p>Like spreadsheet software, we'll use functions to fill in our new variable. The function editor can take one of two forms:</p>
+<ul>
+<li><p>If you selected <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">R</code> from the previous window, you will simply get a basic text window. Type in your <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">R</code> function -- do not use assignment operators or the name of the dataframe in your code (e.g., <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">ifElse(Hours_NCAA&lt;=3, "Low", ifElse(Hours_NCAA&lt;=9, "Medium", "High"))</code>)</p>
+</li>
+<li><p>If you selected the option for point-and-click, you'll have a small window at the top with for areas:</p>
+<ul>
+<li>On the left is a list of your variables you can use in the calculation of the new variable</li>
+<li>On the top are a series of mathematical and logical operators</li>
+<li>On the right are a list of the most common functions</li>
+<li>In the center is a text window which you will use to bring all of these parts together. If you accidentally drag the wrong thing into this window, simply drag it over to the trash can in the bottom right of this window to remove it.</li>
+</ul>
+</li>
+</ul>
+<h4 id="the-ifelse-function">The <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">ifElse</code> Function</h4>
+<p>The function we'll use for binning is called <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">ifElse</code>. This is identical to the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">IF</code> function in spreadsheet software. For a review, please see that tutorial linked at the top of this document. Let's start by scrolling through the list on the right-hand side and dragging <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">ifElse(y)</code> into the text field.</p>
+<p>In JASP, we can see that we need to provide the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">ifElse</code> functions with 3 parameters inside the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">()</code> wrapper: <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">test</code>, <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">then</code>, and <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">else</code>. These are identical to the parameters we supplied to the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">IF</code> function in the spreadsheet tutorial. To edit the parameters, you can either click on the parameter name and begin typing, or you can drag and drop things into place.</p>
+<p>The first parameter <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">ifElse</code> needs is our test. In our case, we want to see if the cell from the same row in the Hours_NCAA variable is a certain value. Let's start with the "Low" category. We want <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Hours_NCAA_Cat</code> to equal "Low" if <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Hours_NCAA</code> is less than or equal to 3. Drag in <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Hours_NCAA</code> from the menu on the left and drop it below the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">ifElse</code> function. Then drag the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">≤</code> operator down from the top and drop it to the right of <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Hour_NCAA</code>. To the right of the operator, you'll now see an ellipses -- click on that and type in the number 3. Now drag this whole group (click and drag the operator) into the "test" parameter position in the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">ifElse</code> function.</p>
+<p>The second parameter the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">ifElse</code> function needs is what to do when the test is true. This is easy -- we want to show the text "Low" when <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Hours_NCAA≤3</code>, so type <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Low</code> into the "then" parameter position.</p>
+<p>The third parameter the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">IF</code> function needs is what to do when the test is false. This is really tricky, because we still have two categories left! We need to discern between people who watch between 4 and 9 hours, "Medium", and people who watch more than 9 hours, "High". To accomplish this, we'll need to run another <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">ifElse</code> test, so for now drag in a new <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">ifElse(y)</code> function from the right menu and drop it in the "else" parameter position. We'll fill this new set of parentheses in the next step.</p>
+<h4 id="nested-ifelse-functions">Nested <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">ifElse</code> Functions</h4>
+<p>Just like in the spreadsheet tutorial, we'll need to "nest" a new function to run a second test for the final two categories.</p>
+<p>Inside this second <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">ifElse</code> test, we again need 3 parameters. For the first parameter, we need our new test. We're still checking the number of hours of college football, so drag in another <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Hours_NCAA</code> from the left menu. Now, for the value, our second test is checking to see if a person watches between 4 and 9 hours. Now because everyone who watches less than 4 hours passed the first test, we don't need to worry about writing the lower part of that test. So let's add the upper part of this test by dragging in the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">≤</code> operator from the top menu and typing "9" into the ellipses. Drag this whole component into the "test" parameter position in the nested <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">ifElse</code> function.</p>
+<p>For the second parameter, "then", type <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Medium</code> -- this is the ordinal category which represents 4 to 9 hours. And now for the third parameter, let's consider what's left from our two tests: If the value in <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Hours_NCAA</code> failed the first test, it must be greater than 3. If the value in <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Hours_NCAA</code> then also failed the second test, that must mean it's also greater than 9. And as luck would have it, that's exactly what the "High" category describes! So add <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">High</code> to the "else" parameter position. We're done with our formula, so you can click the "Compute column" button at the bottom of this window. Note that this will automatically fill in all values in the new variable -- you do not need to expand your function like we did in the spreadsheet tutorial. Double check that your new values match those we created before in the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Hours_NCAA_Cat</code> column.</p>
+<center> <img width="90%" src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/JASP_NewBin.png"> </center>
+
+<hr>
+
+<h2 id="indices">Indices</h2>
+<p>Indices are another useful type of variable transformation; they combine multiple measures into one single measure. This can help you with content validity if those individual variables measure different components of a broad concept. It may also help expedite some of your inferential analyses, which we'll talk about later on this semester.</p>
+<p>There are two main types of indices: sums and means</p>
+<h4 id="summative-index">Summative Index</h4>
+<p>A summative index, or sum, is exactly like it sounds: you simply add up the variables together.</p>
+<blockquote>
+<p>From our football data, let's imagine that we're interested in the total number of hours spent watching football at any level. This could be useful information for advertisers during any football programming, as we could use that to infer how many ads people are exposed to. If someone watches double-digit hours of football, they're watching multiple games, perhaps across different channels or levels of play.</p>
+</blockquote>
+<p>To make our sum index, let's create a new column -- you can name this "Total_Hours_Both_New". Use the "point-and-click" option, along with the "scale" variable class. Since a sum just asks us to add together each variable in the index, we can use the "+" operator. Drag that from the top menu into the text field. Then on one side of the "+", drag <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Hours_NCAA</code> from the left menu and drop on one ellipses. On the other side, drag and drop <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Hours_NFL</code>. Click "Compute column" and verify that the new values match the sum we created before in the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Total_Hours_Both</code> column.</p>
+<center> <img width="90%" src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/JASP_NewSum.png"> </center>
+
+<h4 id="mean-index">Mean Index</h4>
+<p>A mean index is somewhat similar to a summative index, only instead of adding up the values, we'll take the average of them. Averaging is probably more useful when you have three or more variables, as opposed to two, but the principles of the formula construction should translate easily to indices of any size.</p>
+<p>We'll use mathematical functions to calculate the mean. Note that the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">mean(y)</code> function on the right-hand side only takes one parameter and never more than one! This is akin to a sample mean, rather than a mean index. Unfortunately, the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">rowMeans()</code> function, which will accomplish the index calculation, is only available through the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">R</code> option for computing a new variable. If using that option, make sure you wrap your variables in a <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">cbind()</code> function as well, since JASP does not work well with data frame syntax:</p>
+<center> <img width="90%" src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/JASP_NewAvgR.png"> </center>
+
+<p><em>Note:</em> this WILL work with <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">rowSums()</code> to create a summative index as well.</p>
+<p>To create our new variable using the "point-and-click" option, start a new column named "Avg_Hours_Both_New" with the "scale" variable class. For an average, we need to add together the values of our two variables, and then divide that by the number of variables being added together. Drag in both the "+" and the "÷" operators from the top menu and place the "+" operator in the numerator position (top) of the "÷" operator. On the left and right of the "+", drag in <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Hours_NCAA</code> and <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Hours_NFL</code>. Then in the denominator, type "2". Your function should look like this:</p>
+<center> <img width="90%" src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/JASP_NewAvg.png"> </center>
+
+<p>When finished, click "Compute column" and verify that the new values are equivalent to the old values in the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Avg_Hours_Both</code> column. You can ask JASP to round variables by wrapping your equation inside of a <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">round(y)</code> function, available in the right-hand column. However, it should be noted that this will drop training zeroes; e.g., "14.501" will still be "14.5" when rounding to 2 digits. Unfortunately, <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">R</code> functions which <em>are</em> capable of retaining trailing zeros in accordance with APA standards, such as <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">formatC()</code> are not whitelisted base functions in JASP, even if implemented using the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">R</code> option for variable computation.</p>
+<hr>
+
+<h2 id="descriptive-statistics">Descriptive Statistics</h2>
+<p>Generating descriptive statistics, and even descriptive figures, is much easier compared to spreadsheet software. To begin, click the button marked "Descriptives" from the top menu, shown below circled in red:</p>
+<center> <img width="90%" src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/JASP_GUI_Desc.png"> </center>
+
+<p>In the new window, you will see few components. On the left-hand side will be a window containing all of your variables, and to the right of that window you'll see two areas, one marked "Variables" and another marked "Split". To change what variable or variables you would like descriptive statistics on, you need to move a variable from the list on the left into the "Variables" section. Click on a variable from the list, then click on the right-facing arrow next to the "Variables" window to move the variable. To remove a variable from the "Variables" window, just click the variable name and that right-facing button will transform to a left-facing button to move it back to the full list.</p>
+<p>The split window allows you to select a single nominal or ordinal variable that you would like to use to split up your data into different groups for comparison. To move a variable into the split window, select the variable from the list on the left, then click the right-facing arrow next to the split window. You can move it back using the same technique described above. Here is an example of descriptive statistics for the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Age</code> variable, split on the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">State</code> variable:</p>
+<center> <img width="90%" src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/JASP_Desc_SplitEX.png"> </center>
+
+<h4 id="frequency-tables">Frequency Tables</h4>
+<p>Frequency tables are a useful tool for describing how often each unique value of a variable occurs across the whole set of responses. For a more detailed description of the components, see the spreadsheet tutorial linked above.</p>
+<p>In JASP, frequency tables can only be calculated on nominal and ordinal variables. To generate a frequency table, move the variable of interest from the list on the left into the "Variables" window. Then, below the variable list, check the box marked "Frequency tables (nominal and ordinal variables)". Here is a frequency table for the <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Hours_NCAA_Cat</code> variable:</p>
+<center> <img width="90%" src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/JASP_FreqTable.png"> </center>
+
+<p>Unfortunately, there is no way to ask JASP to round the results of a frequency table -- you will need to round numbers manually.</p>
+<p>You can copy tables out of JASP to paste directly into a word processor or LaTeX document. Next to the table name, click the black drop down arrow and select either "Copy" or "Copy LaTeX", respectively.</p>
+<h4 id="central-tendency-and-dispersion">Central Tendency and Dispersion</h4>
+<p>Getting descriptive statistics out of JASP is similarly easy. Move your variable of interest over into the "Variables" window. Then, below that window, expand the "Statistics" options. You'll see a lot of options here, including many of the common central tendency and dispersion statistics which we've talked about this semester, as well as some other options relating to percentiles and the shape of the distribution. Select as many or as few as you would like. The table in the right-hand window will automatically populate with each statistic added from the menu in the left-hand window. Here is a somewhat comprehensive set of statistics regarding the mean index variable <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Avg_Hours_Both</code>:</p>
+<center> <img width="90%" src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/JASP_DescStats.png"> </center>
+
+<p>Don't forget: You can add a nominal or ordinal variable to the "Split" window to compare the descriptive statistics of one variable among groups of participants!</p>
+<h4 id="descriptive-plots">Descriptive Plots</h4>
+<p>In the "Plots" drop-down menu, you can ask JASP to print a variety of plots which might be useful for publication. Near the top of this menu is a separate drop-down menu for the color palette. Using this will change the colors of all figures at once to a uniform palette. Feel free to explore these graphs on your own. I recommend:</p>
+<ul>
+<li>Pie charts for nominal variables</li>
+<li>Distribution plots (histograms) for ordinal or scale variables<ul>
+<li>The "Display density" option will overlay the kernel density plot</li>
+<li>As of this time, there is no way to control binning or colors of this plot</li>
+</ul>
+</li>
+<li>Boxplots for scale variables<ul>
+<li>This can be a really helpful visualization if you also have a grouping variable!</li>
+</ul>
+</li>
+<li>Scatter plots for showing the relationship between any two scale variables<ul>
+<li>"Graph above" and "Graph right" options are uncommon in publications</li>
+<li>"Add regression line" is common though, as is the confidence interval around the estimates -- we'll talk about what this is doing when we get to the inferential statistics lesson</li>
+<li>If you have a third variable as your "Split", this plot will show your groups separately -- helpful if your grouping variable is also a moderator!</li>
+</ul>
+</li>
+</ul>
+<p>You can adjust the scale of the figure by hovering over the bottom-right corner of the figure until your mouse changes to a dual arrow. Click and drag to resize. You can also copy figures into a word processor or save it as an image file in a similar manner to copying tables (see above).</p>
+<p>Here is an example of a box plot comparing <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">Avg_Hours_Both</code> between participants from the two <code style="font-family: &quot;Source Code Pro&quot;, Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">State</code>s in our data: Michigan and Ohio:</p>
+<center> <img width="90%" src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/JASP_BoxplotEX.png"> </center></body>
+      </html>
