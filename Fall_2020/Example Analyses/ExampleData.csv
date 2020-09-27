@@ -1,0 +1,16 @@
+﻿Participant,Age,State,Hours_NCAA,Hours_NCAA_Cat,Hours_NFL,Hours_NFL_Cat,Total_Hours_Both,Avg_Hours_Both
+1,64,Michigan,0,Low,0,Low,0,0.00
+2,20,Ohio,0,Low,4,Medium,4,2.00
+3,24,Ohio,15,High,14,High,29,14.50
+4,35,Michigan,17,High,4,Medium,21,10.50
+5,18,Michigan,5,Medium,5,Medium,10,5.00
+6,25,Michigan,0,Low,0,Low,0,0.00
+7,55,Ohio,9,Medium,3,Low,12,6.00
+8,50,Ohio,5,Medium,10,High,15,7.50
+9,49,Michigan,0,Low,0,Low,0,0.00
+10,51,Ohio,7,Medium,2,Low,9,4.50
+11,62,Ohio,5,Medium,5,Medium,10,5.00
+12,29,Ohio,3,Low,6,Medium,9,4.50
+13,34,Michigan,10,High,0,Low,10,5.00
+14,46,Michigan,0,Low,0,Low,0,0.00
+15,59,Ohio,12,High,0,Low,12,6.00
