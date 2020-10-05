@@ -1,4 +1,4 @@
-﻿Participant,Age,State,Hours_NCAA,Hours_NCAA_Cat,Hours_NFL,Hours_NFL_Cat,Total_Hours_Both,Avg_Hours_Both
+Participant,Age,State,Hours_NCAA,Hours_NCAA_Cat,Hours_NFL,Hours_NFL_Cat,Total_Hours_Both,Avg_Hours_Both
 1,64,Michigan,0,1,0,1,0,0
 2,20,Ohio,0,1,4,2,4,2
 3,24,Ohio,15,3,14,3,29,14.5
