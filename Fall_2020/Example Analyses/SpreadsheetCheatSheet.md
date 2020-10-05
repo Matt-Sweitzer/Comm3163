@@ -1,8 +1,42 @@
-<h1 align="center"><strong>Descriptive and Summary Analysis<br>Using Spreadsheets</strong></h1>
+<h1 align="center"><strong>Data Analysis Using Spreadsheets</strong></h1>
 
   <h3 align="center">Author: Matthew Sweitzer<br>Email: <a href="mailto:sweitzer.34@osu.edu">sweitzer.34@osu.edu</a><br>Website: <a href="https://www.matthewsweitzer.com">matthewsweitzer.com</a></h3>
 
 <hr>
+
+## Table of Contents
+  1. [Introduction](#introduction)
+  3. [Data Structure](#datastructure)
+    - [Rows == Participants](#datastructureA)
+    - [Columns == Variables](#datastructureB)
+    - [Referencing Data Points](#datastructureC)
+  4. [Variable Tranformation](#variabletransform)
+    - [Column Addition](#variabletransformA)
+    - [New Variable Naming](#variabletransformB)
+    - [Functions](#variabletransformC)
+    - [The `IF` Function](#variabletransformD)
+    - [Nested `IF` Functions](#variabletransformE)
+    - [Expanding Functions](#variabletransformF)
+  5. [Indices](#indices)
+    - [Summative Index](#indicesA)
+    - [Mean Index](#indicesB)
+  6. [Referencing the Data Sheet from the Analysis Sheet](#sheets)
+  7. [Frequency Tables](#frequencytables)
+    - [N](#frequencytablesA)
+    - [Percent](#frequencytablesB)
+    - [Cumulative Percent](#frequencytablesC)
+  8. [Descriptive Statistics - Central Tendency](#centraltendency)
+    - [Mode](#centraltendencyA)
+    - [Median](#centraltendencyB)
+    - [Mean](#centraltendencyC)
+  9. [Descriptive Statistics - Dispersion](#dispersion)
+    - [Range](#dispersionA)
+    - [Variance](#dispersionB)
+    - [Standard Deviation](#dispersionC)
+
+<hr><a name="introduction"></a>
+
+## Introduction
 
 This document is meant to guide you through some of the basic functions in spreadsheet editing software, like Microsoft Excel, Google Sheets, Apple Numbers, or Libre Calc. The tutorial and linked example data are offered under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons - Attribution</a> license. That means you may use, share, or change it in any way you like -- just make sure that you credit the author if you publish this elsewhere.
 
@@ -12,7 +46,7 @@ The codebook for this imagined survey is available <a href="https://github.com/M
 
 As a general rule of thumb, I recommend maintaining the data on one sheet in your file, and running all of your summary analyses (aside from data transformations) on a separate sheet. That way, you are least likely to delete or alter any data. Remember: the results you get are only as good as the data you provide your software. Following proper "data hygiene" is an essential part of research.
 
-<hr>
+<hr><a name="datastructure"></a>
 
 ## Data Structure
 
@@ -22,9 +56,13 @@ Even though a data frame is rectangular in shape, it's actually made up of a ser
 
 <center> <img src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/DataFrame.png", width=90%> </center>
 
+<a name="datastructureA"></a>
+
 #### Rows == Participants
 
 In this data frame, we have 16 rows, each marked with a number 1 through 16. The top row, or 1, is what's called a "header". This header contains the names for each of the variables in our study. The rows below the header (2 through 16) each represent a single participant in our study. In other words, all of the data points contained in row 2 are responses collected from the first survey participant; all of the data points contained in row 3 are responses collected from the second survey participant -- and so on.
+
+<a name="datastructureB"></a>
 
 #### Columns == Variables
 
@@ -32,13 +70,15 @@ The data frame also contains 9 columns, marked by capital letters A, B, C, ... I
 
 *Note*: If we had more than 26 variables in our data, most spreadsheet software would start using two letters to identify columns; e.g., "AA", "AB", "AC", ... "ZZ". If you have more than 702 variables, the programs will use three letters; "AAA", "AAB", "AAC", ... "ZZZ" -- and so on.
 
+<a name="datastructureC"></a>
+
 #### Referencing Data Points
 
 When we want to "call", or refer to, certain cells in a function, we'll use the letter followed by the number. For example, `C10` will tell us what State participant 9 is from -- Michigan. When we want to refer to a collection of data points, we need three things: a starting point, and ending point, and a colon (`:`) separating them. For example, `A2:I2` would give us all of the data points pertaining to participant 1. Likewise, `B2:B16` would give us all of the ages for all 15 participants.
 
 Although uncommon, you can also refer to a "rectangle" of data, rather than using a single row or column. Your starting point should be the top-left corner of the rectangle and your ending point should be the bottom-right corner of the rectangle. `D7:E9` would give us both the Hours_NCAA and Hours_NCAA_Cat for participants 6, 7, and 8.
 
-<hr>
+<hr><a name="variabletransform"></a>
 
 ## Variable Transformation
 
@@ -47,6 +87,8 @@ One of the most important functions of spreadsheet software is the ability to tr
 >Let's say, for example, that we want to distinguish between high, medium, and low viewership of college football among our sample. While the Hours_NCAA variable tells us *exactly* how much our participants watch in a typical week, it looks like it's quite varied. To simplify matters, let's classify all participants who watch between 0 and 3 hours as "Low", all participants who watch between 4 and 9 hours as "Medium", and all users who watch more than 9 hours as "High".
 
 Variable transformations, in most circumstances, should take place on the same "sheet" as the original data points. Sheets are a way for the software to compartmentalize your work. They appear as tabs in the user interface -- they are along the bottom in Microsoft Excel, Google Sheets, and Libre Office, while Apple Numbers places these tabs along the top. There are two sheets in the example data linked above: "Survey_Results" and "Analyses". Since our original data appears on the "Survey_Results" sheet, we'll add our new transformations to this sheet.
+
+<a name="variabletransformA"></a>
 
 #### Column Addition
 
@@ -60,15 +102,21 @@ I have already added new columns for the categorical transformations we'll talk 
 
 * On Apple Numbers, first click anywhere inside the data frame to bring up the markers on the top and left to indicate columns and rows (respectively). Then hover your mouse over the column letter until a downward arrow appears and click the arrow. From this menu, select "Add Column After".
 
+<a name="variabletransformB"></a>
+
 #### New Variable Naming
 
 Once we have a new column for our new variable, we need to make sure to name the variable in the header. In `E1` you can see that I named this new variable "Hours_NCAA_Cat". It's really important that when you name variables, this new name helps you remember what that variable means. In this case, I'm using the suffix "_Cat" to indicate that this is a categorical tranformation of the variable "Hours_NCAA". If you are creating your own codebook, or dictionary, for your data, don't forget to add the new variable in the same position in the order!
+
+<a name="variabletransformC"></a>
 
 #### Functions
 
 Then, the next step will be to fill the column with new data. To accomplish this, we could just fill it in manually. This might be easy enough for 15 participants. However, with larger data sets or tired eyes, it's easy to make a mistake. Luckily, we can use the software to help "automate" this process. This automation occurs in the software through something called a "function" (sometimes called "formula"). Functions are a set of rules that are applied with some input to produce a desired output. In our case, we want to take our input of the number of hours of NCAA football watched and output one of "Low", "Medium", or "High", depending on what the input is.
 
 Functions generally follow the same format in all spreadsheet software: `=FUNCTION()`. The `=` tells the software "I want the cell I'm editing to equal...". `FUNCTION` provides the name of the function in all caps (e.g., `SUM`, `AVERAGE`, `IF`). There are a wide variety of functions available to users -- I recommend searching Google, or perusing the menus in your software of choice. Finally, the parentheses `()` are a "wrapper" around the input that the function expects. The input(s) may also be referred to as "parameter(s)". Often when you begin typing your function name, the software will show you a little example of what the function expects for the parameters (Sorry Apple users! Numbers uses the same parameters as the others, but does not show the example). It will definitely take some practice to get comfortable with functions.
+
+<a name="variabletransformD"></a>
 
 #### The `IF` Function
 
@@ -90,6 +138,8 @@ The second parameter the `IF` function needs is what to do when the test is true
 
 The third parameter the `IF` function needs is what to do when the test is false. This is really tricky, because we still have two categories left! We need to discern between people who watch between 4 and 9 hours, "Medium", and people who watch more than 9 hours, "High". To accomplish this, we'll need to run another `IF` test, so for now put a comma followed by `IF()` inside the parentheses in `E2`. We'll fill this new set of parentheses in the next step.
 
+<a name="variabletransformE"></a>
+
 #### Nested `IF` Functions
 
 Sometimes in programming, or in life, we want to run a different test when the first test fails.
@@ -102,7 +152,9 @@ Inside this second `IF` test, we again need 3 parameters. For the first paramete
 
 For the second parameter, add a comma and then type `"Medium"` -- this is the ordinal category which represents 4 to 9 hours. And now for the third parameter, let's consider what's left from our two tests: If the value in column `D` failed the first test, it must be greater than 3. If the value in column `D` then also failed the second test, that must mean it's also greater than 9. And as luck would have it, that's exactly what the "High" category describes! So add a comma and `"High"` inside the nested parentheses. We're done with our formula, so hit Enter on your keyboard (or "done" or "&check;" on your iPad) and it should fill in the correct category. If you encounter an error, double check your syntax; `E2` should contain `=IF(D2<=3, "Low", IF(D2<=9, "Medium", "High"))`.
 
-#### Expanding the Functions
+<a name="variabletransformF"></a>
+
+#### Expanding Functions
 
 Now, you could write this new function we just created in every single cell down our new column. But that kind of defeats the purpose of having the function, right? So now we need to tell the spreadsheet software to expand this function to fill the rest of the column.
 
@@ -123,13 +175,15 @@ There are several ways of doing this, depending on which software and hardware y
 
 Notice that the functions in the cells we just expanded to are somewhat different. For example, the cell in `E3` references `D3` instead of `D2`; `E4` references `D4` -- and so on. Spreadsheet software are generally pretty good at figuring out what you were trying to accomplish in expanding the first cell, but sometimes it doesn't work as well. Always double check a few cells to make sure they're correct!
 
-<hr>
+<hr><a name="indices"></a>
 
 ## Indices
 
 Indices are another useful type of variable transformation; they combine multiple measures into one single measure. This can help you with content validity if those individual variables measure different components of a broad concept. It may also help expedite some of your inferential analyses, which we'll talk about later on this semester.
 
 There are two main types of indices: sums and means
+
+<a name="indicesA"></a>
 
 #### Summative Index
 
@@ -142,6 +196,8 @@ To make a sum index, we'll use the column `H` in our data frame. Let's call this
   * We can use the `SUM` function and provide `D2` and `F2` as parameters: `=SUM(D2, F2)`
 
 Once you have that sum calculated in `H2`, expand that function down the rest of the column to fill in the index for the other participants.
+
+<a name="indicesB"></a>
 
 #### Mean Index
 
@@ -156,9 +212,9 @@ Finally, let's expand the cell to fill the column. A quick formatting note befor
   * **MS Excel, Google Sheets, and Libre Calc**: there is a pair of buttons along the top toolbar that shows an arrow pointing in one direction and either expanding or contracting the number of 0's after the decimal place. Select the cell(s) you would like to format then click these buttons until you see the desired number of digits.
   * **Apple Numbers**: Select the cell or cells you would like to round. In the top-right corner of the window, click the button with the paintbrush icon. Click the tab marked "Cell", then click the up or down arrows on the box next to "Decimals:" until you reach the desired number of digits.
 
-<hr>
+<hr><a name="sheets"></a>
 
-## Referencing the Data sheet from the Analysis sheet
+## Referencing the Data Sheet from the Analysis Sheet
 
 For the remainder of this tutorial, we're going to be working on the second sheet titled "Analyses". As mentioned above, I strongly encourage you to use a separate sheet for any kind of summary analysis that does not involve transformation. This will help prevent a lot of common accidents in data deletion or unwanted transformation.
 
@@ -181,7 +237,7 @@ Also mentioned above are the techniques for referencing values in the sheet -- f
 
 With this in mind, let's start building our summary statistics. I have completed examples on the left-hand side of the "Analyses" sheet, and you may follow along or build your own on the right-hand side.
 
-<hr>
+<hr><a name="frequencytables"></a>
 
 ## Frequency Tables
 
@@ -197,6 +253,8 @@ Before we dive in, let's look at one example:
 
 <br>
 In the provided example, we'll work through a frequency table of the newly-created Hours_NCAA_Cat variable
+
+<a name="frequencytablesA"></a>
 
 #### *N*
 
@@ -218,6 +276,8 @@ To fill out the other two cells in the column, we can use the exact same formula
 
 Before we move to percent, take a look at your n column. Now go back and delete a few of the cells in the Hours_NCAA_Cat column (we can fill them back in later with expansion). Go back to the "Analyses" sheet -- the n column changed! Spreadsheets can handle additions or changes to the data quite easily!
 
+<a name="frequencytablesB"></a>
+
 #### Percent
 
 The percent column should tell you what proportion of your total sample have a certain value for your variable of interest. Percentages are relatively easy to calculate: you divide the number of observations that have the value by the total number of observations in the data set.
@@ -235,6 +295,8 @@ When you hit enter, the cell fills with a proportion, not a percentage. To fix t
   * **MS Excel, Google Sheets, & Libre Calc:** click the cell or cells you would like to reformat to a percentage, then click the button that looks like a percent sign in the top toolbar. You can also add or remove decimal places using the buttons with the small arrows and zeros.
   * **Apple Numbers:** click on the cell or cells you would like to reformat to a percentage, then click the button that looks like a paintbrush in the top-right corner of the window. Click on the tab marked "Cell", then under "Data Format" change the drop-down menu from "Automatic" to "Percentage". You can also change the decimal places in this same menu.
 
+<a name="frequencytablesC"></a>
+
 #### Cumulative Percent
 
 Cumulative percentage is useful for variables which are ordered in some way. This column tells you what combined percent of your sample has a value that is from that row or any of the rows above it. How you order the table is important here. If you order from low to high, then the cumulative percent reflects what proportion have "at most" the value in the row. If you order from high to low, then cumulative percent reflect the proportion with "at least" that value.
@@ -246,7 +308,7 @@ To fill this column, we'll just need to add the value in the `C` column from the
   * In the second row, we need to add the value in `C4` to the value in `C3`: `=C3+C4` or `=SUM(C3:C4)`
   * Finally, in the third row, add up `C3:C5`: `=C3+C4+C5` or `=SUM(C3:C5)`
 
-<hr>
+<hr><a name="centraltendency"></a>
 
 ## Descriptive Statistics - Central Tendency
 
@@ -258,15 +320,21 @@ The job of central tendency summary measures is to provide a single value that i
 
 In the example analysis, we're going to provide the measures of central tendency for Hours_NCAA. In the .xlsx file, these values will be in `B9:D9` on the "Analyses" sheet. In the .numbers file, these values will be in the `B2:D2` cells in the table labeled "Example Central Tendency" on the "Analyses" sheet.
 
+<a name="centraltendencyA"></a>
+
 #### Mode
 
 For mode, we'll use the function called `MODE`. This function takes one parameter: the set of cells from which the mode is drawn. Using the sheet reference described above, we can fill `B9` with `=MODE(Survey_Results!D2:D16)` (or the equivalent for other software).
+
+<a name="centraltendencyB"></a>
 
 #### Median
 
 Finding the median is similarly easy: we'll use the function called `MEDIAN` and provide the same reference cells as the only parameter. We get: `=MEDIAN(Survey_Results!D2:D16)`.
 
 A quick note on medians: if you are attempting to use `MEDIAN` on an ordinal measure, you will need to convert your codes to numbers. Spreadsheet software are not able to assign an order to text labels. For example, if we wanted to use `MEDIAN` on one of the new "_Cat" variables, we could use 1 instead of "Low", 2 instead of "Medium", and 3 instead of "High". This should be pretty easy to do with some small changes to the transformation code above (e.g., `=IF(D2<=3, 1, IF(D2<=9, 2, 3))`)
+
+<a name="centraltendencyC"></a>
 
 #### Mean
 
@@ -276,7 +344,7 @@ Just keep in mind that this is sometimes called a "sample mean", because it's th
 
 <center> <img src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/CentralT.png", width=80%> </center>
 
-<hr>
+<hr><a name="dispersion"></a>
 
 ## Descriptive Statistics - Dispersion
 
@@ -288,13 +356,19 @@ The role of dispersion statistics is to demonstrate how wide-spread the values a
 
 In the example analysis, we're going to provide the measures of dispersion for Hours_NCAA. In the .xlsx file, these values will be in `B13:D13` on the "Analyses" sheet. In the .numbers file, these values will be in the `B2:D2` cells in the table labeled "Example Dispersion" on the "Analyses" sheet.
 
+<a name="dispersionA"></a>
+
 #### Range
 
 There is no single built-in function for either definition of range. The first definition contains two values: the minimum (`=MIN()`) and the maximum (`=MAX()`). Those two functions will take the same referenced cells we used for central tendency above. To find the second definition of range, we'll need to as the software to do some math: subtract the minimum value from the maximum value. Doing that, we get range with the formula `=MAX(Survey_Results!D2:D16)-MIN(Survey_Results!D2:D16)`
 
+<a name="dispersionB"></a>
+
 #### Variance
 
 Getting the variance is comparatively easier: we just need to use the `VAR` function with the same referenced cells, or `=VAR(Survey_Results!D2:D16)`
+
+<a name="dispersionC"></a>
 
 #### Standard Deviation
 

@@ -4,13 +4,43 @@
 
 <hr>
 
+## Table of contents
+1. [Introduction](#introduction)
+2. [JASP GUI](#jaspgui)
+3. [Data Structure](#datastructure)
+  - [Rows == Participants](#datastructureA)
+  - [Columns == Variables](#datastructureB)
+4. [Variable Tranformation](#variabletransform)
+  - [Column Addition](#variabletransformA)
+  - [New Variable Naming](#variabletransformB)
+  - [Functions](#variabletransformC)
+  - [The `ifElse` Function](#variabletransformD)
+  - [Nested `ifElse` Functions](#variabletransformE)
+5. [Indices](#indices)
+  - [Summative Index](#indicesA)
+  - [Mean Index](#indicesB)
+6. [Descriptive Statistics](#descriptives)
+  - [Frequency Tables](#descriptivesA)
+  - [Central Tendency and Dispersion](#descriptivesB)
+  - [Descriptive Plots](#descriptivesC)
+7. [Inferential Statistics - Chi-Square](#chisquare)
+8. [Inferential Statistics - Correlation](#correlation)
+9. [Inferential Statistics - *t*-tests](#ttests)
+  - [One-sample *t*-test](#ttestsA)
+  - [Unpaired (Independent) Samples *t*-test](#ttestsB)
+  - [Paired (Dependent) Samples *t*-test](#ttestsC)
+
+<hr><a name="introduction"></a>
+
+## Introduction
+
 This document is meant to guide you through some of the basic functions in the <a href="https://jasp-stats.org">JASP statistical software</a>. The tutorial and linked example data are offered under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons - Attribution</a> license. That means you may use, share, or change it in any way you like -- just make sure that you credit the author if you publish this elsewhere.
 
 This tutorial relies on an example data set of 15 imagined survey responses. The goal of this example survey is to determine in which state one should run advertisements for the upcoming professional football season to attract viewers who don't currently watch much professional football. This tutorial focuses on descriptive and summary statistics, but I will return to this in a separate tutorial on inference.
 
 The codebook for this imagined survey is available <a href="https://github.com/Matt-Sweitzer/Comm3163/blob/master/Fall_2020/Example%20Analyses/Codebook.md">here</a>. Some parts of this tutorial assume that you have already completed the tutorial on spreadsheet software available <a href="https://github.com/Matt-Sweitzer/Comm3163/blob/master/Fall_2020/Example%20Analyses/SpreadsheetCheatSheet.md">here</a>. This tutorial uses the same dataset, however because JASP is incapable of opening Excel files, I have converted it to a .csv file for you, which you can download <a href="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/ExampleData.csv">here</a> (Note: right-click "here", download or save linked file). If you prefer to skip the part where we convert the measurement classes of each variable, you can download the .jasp file <a href="https://github.com/Matt-Sweitzer/Comm3163/blob/master/Fall_2020/Example%20Analyses/ExampleData.jasp">here</a>.
 
-<hr>
+<hr><a name="jaspgui"></a>
 
 ## JASP GUI
 
@@ -20,6 +50,8 @@ When you first open the application, you'll see the window pictured below. The t
 
 <center> <img src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/JASP_GUI.png", width=90%> </center>
 
+<hr><a name="datastructure"></a>
+
 ## Data Structure
 
 Data from a survey represent a collection of responses from a variety of study participants to a series of survey questions. The results that we get from a study are put into a special format called a "data frame". This frame, much like a picture frame, is rectangular in shape. If you conduct your survey using any of the common online platforms, such as Survey Monkey or Qualtrics, chances are that your data will be in this format when you go to download it. If you are collecting your survey responses on paper, such as with an intercept or mail survey, you will likely need to manually enter your data into a frame format in order to use a computer for your analyses.
@@ -28,9 +60,13 @@ Even though a data frame is rectangular in shape, it's actually made up of a ser
 
 <center> <img src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/DataFrame_JASP.png", width=90%> </center>
 
+<a name="datastructureA"></a>
+
 #### Rows == Participants
 
 In this data frame, we have 15 rows, each marked with a number 1 through 15. Unlike in the spreadsheet software, JASP assumes we have a header row in our data when we open it, and it does not provide a number for the header row. This header contains the names for each of the variables in our study. The rows below the header (1 through 15) each represent a single participant in our study. In other words, all of the data points contained in row 1 are responses collected from the first survey participant; all of the data points contained in row 2 are responses collected from the second survey participant -- and so on.
+
+<a name="datastructureB"></a>
 
 #### Columns == Variables
 
@@ -68,7 +104,7 @@ For ordinal variables, sometimes it helps to make sure that your categories are 
 
 We could reorder these values if we wanted to -- we don't need to because the default is in the correct order, but imagine that our analysis asked what leads people to watch *less* football. We could reverse-code all categories by clicking the button on the right with both an up and a down arrow. You could also move individual categories up and down by clicking on the row with the category you want to move, and then clicking the "up" or "down" arrows. You can also filter results by the value of a variable by clicking on the checkmark on the left side of this window. "X" means that the participants with that value will be hidden from the results.
 
-<hr>
+<hr><a name="variabletransform"></a>
 
 ## Variable Transformation
 
@@ -78,9 +114,13 @@ In the spreadsheet tutorial, we looked at how to transform a ratio numeric varia
 
 Although those two binned transformations (`Hours_NCAA_Cat` and `Hours_NFL_Cat`) that we created before are present in the current dataset, you might still need to know how to perform the same transformations in JASP.
 
+<a name="variabletransformA"></a>
+
 #### Column Addition
 
 To add a new column for your new variable, simply click the "+" icon on the right-hand side of the header row. Unfortunately, this will always add a new column on the right-most side of your data frame -- as far as I know, there is no way to reorder variables.
+
+<a name="variabletransformB"></a>
 
 #### New Variable Naming
 
@@ -91,6 +131,8 @@ Below "Name:", you will see several options. First, choose between implementing 
 Finally, choose what measurement type the new variable should take on. For "Hours_NCAA_Cat_New", we'll choose "Ordinal". Once all of those components are filled out, click "Create Column" to bring up the function editor.
 
 <center> <img src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/JASP_NewVar.png", width=40%> </center>
+
+<a name="variabletransformC"></a>
 
 #### Functions
 
@@ -104,6 +146,8 @@ Like spreadsheet software, we'll use functions to fill in our new variable. The 
   * On the right are a list of the most common functions
   * In the center is a text window which you will use to bring all of these parts together. If you accidentally drag the wrong thing into this window, simply drag it over to the trash can in the bottom right of this window to remove it.
 
+<a name="variabletransformD"></a>
+
 #### The `ifElse` Function
 
 The function we'll use for binning is called `ifElse`. This is identical to the `IF` function in spreadsheet software. For a review, please see that tutorial linked at the top of this document. Let's start by scrolling through the list on the right-hand side and dragging `ifElse(y)` into the text field.
@@ -116,6 +160,8 @@ The second parameter the `ifElse` function needs is what to do when the test is 
 
 The third parameter the `IF` function needs is what to do when the test is false. This is really tricky, because we still have two categories left! We need to discern between people who watch between 4 and 9 hours, "Medium", and people who watch more than 9 hours, "High". To accomplish this, we'll need to run another `ifElse` test, so for now drag in a new `ifElse(y)` function from the right menu and drop it in the "else" parameter position. We'll fill this new set of parentheses in the next step.
 
+<a name="variabletransformE"></a>
+
 #### Nested `ifElse` Functions
 
 Just like in the spreadsheet tutorial, we'll need to "nest" a new function to run a second test for the final two categories.
@@ -126,13 +172,15 @@ For the second parameter, "then", type `Medium` -- this is the ordinal category 
 
 <center> <img src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/JASP_NewBin.png", width=90%> </center>
 
-<hr>
+<hr><a name="indices"></a>
 
 ## Indices
 
 Indices are another useful type of variable transformation; they combine multiple measures into one single measure. This can help you with content validity if those individual variables measure different components of a broad concept. It may also help expedite some of your inferential analyses, which we'll talk about later on this semester.
 
 There are two main types of indices: sums and means
+
+<a name="indicesA"></a>
 
 #### Summative Index
 
@@ -143,6 +191,8 @@ A summative index, or sum, is exactly like it sounds: you simply add up the vari
 To make our sum index, let's create a new column -- you can name this "Total_Hours_Both_New". Use the "point-and-click" option, along with the "scale" variable class. Since a sum just asks us to add together each variable in the index, we can use the "+" operator. Drag that from the top menu into the text field. Then on one side of the "+", drag `Hours_NCAA` from the left menu and drop on one ellipses. On the other side, drag and drop `Hours_NFL`. Click "Compute column" and verify that the new values match the sum we created before in the `Total_Hours_Both` column.
 
 <center> <img src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/JASP_NewSum.png", width=90%> </center>
+
+<a name="indicesB"></a>
 
 #### Mean Index
 
@@ -160,7 +210,7 @@ To create our new variable using the "point-and-click" option, start a new colum
 
 When finished, click "Compute column" and verify that the new values are equivalent to the old values in the `Avg_Hours_Both` column. You can ask JASP to round variables by wrapping your equation inside of a `round(y)` function, available in the right-hand column. However, it should be noted that this will drop training zeroes; e.g., "14.501" will still be "14.5" when rounding to 2 digits. Unfortunately, `R` functions which *are* capable of retaining trailing zeros in accordance with APA standards, such as `formatC()` are not whitelisted base functions in JASP, even if implemented using the `R` option for variable computation.
 
-<hr>
+<hr><a name="descriptives"></a>
 
 ## Descriptive Statistics
 
@@ -174,6 +224,8 @@ The split window allows you to select a single nominal or ordinal variable that 
 
 <center> <img src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/JASP_Desc_SplitEX.png", width=90%> </center>
 
+<a name="descriptivesA"></a>
+
 #### Frequency Tables
 
 Frequency tables are a useful tool for describing how often each unique value of a variable occurs across the whole set of responses. For a more detailed description of the components, see the spreadsheet tutorial linked above.
@@ -186,6 +238,8 @@ Unfortunately, there is no way to ask JASP to round the results of a frequency t
 
 You can copy tables out of JASP to paste directly into a word processor or LaTeX document. Next to the table name, click the black drop down arrow and select either "Copy" or "Copy LaTeX", respectively.
 
+<a name="descriptivesB"></a>
+
 #### Central Tendency and Dispersion
 
 Getting descriptive statistics out of JASP is similarly easy. Move your variable of interest over into the "Variables" window. Then, below that window, expand the "Statistics" options. You'll see a lot of options here, including many of the common central tendency and dispersion statistics which we've talked about this semester, as well as some other options relating to percentiles and the shape of the distribution. Select as many or as few as you would like. The table in the right-hand window will automatically populate with each statistic added from the menu in the left-hand window. Here is a somewhat comprehensive set of statistics regarding the mean index variable `Avg_Hours_Both`:
@@ -193,6 +247,8 @@ Getting descriptive statistics out of JASP is similarly easy. Move your variable
 <center> <img src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/JASP_DescStats.png", width=90%> </center>
 
 Don't forget: You can add a nominal or ordinal variable to the "Split" window to compare the descriptive statistics of one variable among groups of participants!
+
+<a name="descriptivesC"></a>
 
 #### Descriptive Plots
 
@@ -214,3 +270,72 @@ You can adjust the scale of the figure by hovering over the bottom-right corner 
 Here is an example of a box plot comparing `Avg_Hours_Both` between participants from the two `State`s in our data: Michigan and Ohio:
 
 <center> <img src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/JASP_BoxplotEX.png", width=90%> </center>
+
+<hr><a name="chisquare"></a>
+
+## Inferential Statistics - Chi-Square Test
+
+Starting off our inferential statistical tests is the chi-square test. This test is appropriate when comparing the joint frequencies of two categorical variables (nominal or ordinal) against some expected frequency. In the most basic form, we can allow this test to calculate expected frequencies for us by summing across the rows and columns. In this case, the null hypothesis would suggest that there is no significant difference between the observed frequencies in each cell of a cross-tabulation and the expected frequency of that cell given by the joint probability of the corresponding categories relative to the distribution in the full variables.
+
+To begin, let's ask JASP to find the cross-tabulation of two of our categorical variables: `State` and `Hours_NCAA_Cat`. This will help us see the observed frequencies. From the top menu, click "Frequencies", and then select "Contingency Tables". Next, move `State` and `Hours_NCAA_Cat` each into the one of "Rows" and "Columns" windows -- the order does not matter, but make sure you don't put them both in the same window. This should populate the results side with your cross-tabulated frequencies:
+
+<center> <img src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/JASP_CrossTabs.png", width=90%> </center>
+
+
+Now we just need to run the chi-square tests. To do that, we just need to open the "Statistics" menu and check the box marked χ2 (chi squared). This will add a table with the results of the test, indicating the test statistic value, degrees of freedom, *p*-value, and sample size:
+
+<center> <img src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/JASP_ChiSquared.png", width=90%> </center>
+
+<hr><a name="correlation"></a>
+
+## Inferential Statistics - Correlation Test
+
+The next test we'll look at is correlation. Correlation tells us to what extent changes in one numeric variable (interval or ratio) *coincide with* changes in another numeric variable. The most common correlation statistic is Pearson's *r*, however others available in JASP include Spearman's *ρ* and Kendall's *τ*.
+
+To start a correlation test, select "Regression" from the top menu, then choose "Correlation". Next, move two scale variables over to the "Variables" window -- in this example, let's look at `Hours_NCAA` and `Hours_NFL` to see if viewing one kind of football is associated with the other. By default, the "Pearson's *r*" and "Report significance" options will be checked -- leave those turned on in most cases. Additional options that might be useful for reporting include "Flag significant correlations", which will add a significance note below the table, and "Confidence intervals" with the default "95.0%". The latter will print the confidence interval (lower and upper) of the Pearson's *r* statistic -- in most cases, we would like to see that 0 is not included in this range. Finally, the default "Alt. Hypothesis" of "Correlated" will work for us today, but you can change your test to a one-tailed test with this setting. Here's the results:
+
+<center> <img src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/JASP_CorTest.png", width=90%> </center>
+
+*Note*: The option "Display pairwise" will suppress the correlation table structure. While the table might be useful for more than two variables, the pairwise would display the same information in a more condensed fashion. Finally, the "Scatter plots" option will give you a nice figure to go along with your statistic.
+
+<hr><a name="ttests"></a>
+
+## Inferential Statistics - *t*-tests
+
+*t*-tests are useful in a variety of situations. In most cases, you need at least one numeric variable (interval or ratio). If you have only that one measure and you would like to compare the distribution against a test value (e.g., 0), use the one-sample test. If you have two measurement distributions which ***do NOT*** come from the same participants (e.g., two groups of participants, denoted by a categorical variable; see below), use the unpaired (independent) test. Finally, if you have two measurement distributions which ***DO*** come from the same participants (e.g., pre-test and post-test values, often stored as separate variables in the data), use the paired (dependent) test.
+
+<a name="ttestsA"></a>
+
+#### One-sample *t*-test
+
+From the "T-Tests" menu at the top, select "One Sample T-Test". In this example, let's see if people's average viewing hours between NCAA and NFL football is greater than zero -- in other words, does the average person watch some amount of football in a typical week?
+
+For this test, move `Avg_Hours_Both` to the "Variables" window. Make sure that the "Test value" on the left is 0 -- this should be the default, but we could change this value here. For this test, we'll select a one-tailed test, so click the option called "> Test value". Finally, check the options "Effect Size" to print the Cohen's *d* statistic and "Descriptives" to print the mean and standard deviation of our variable of interest (often reported in conjunction with the test results). Here's the output:
+
+<center> <img src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/JASP_ttest_OS.png", width=90%> </center>
+
+In this case, because *p* is less than the conventional alpha level of 0.05, we can reject the null hypothesis that people watch 0 hours of football on average between NCAA and NFL.
+
+<a name="ttestsB"></a>
+
+#### Unpaired (Independent) Samples *t*-test
+
+From the "T-Tests" menu at the top, select "Independent Samples T-Test". In this example, let's see if Ohioans watch a different amount of professional football in a typical week compared to Michiganders. Let's move `Hours_NFL` into the "Variables" window, and move `State` into the "Grouping Variable" window.
+
+You can change the student's test to one of the more robust options on the left-hand side -- we'll leave it at "Student" for this example. We're just looking for non-directional differences, so leave the "Alt. Hypothesis" at the default two-tailed option. Finally, check "Effect Size" to print the Cohen's *d* statistic and check the "Descriptives" option. Here are the results:
+
+<center> <img src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/JASP_ttest_US.png", width=90%> </center>
+
+Note that the value of the *t* statistic is negative. This is because we are comparing Michiganders against Ohioans -- they watch less football than Ohioans. If we wanted to compare Ohioans against Michiganders, we could simply manually flip the sign of the statistic (i.e., "2.229"), or we could reorder the state variable. See the "[Columns == Variables](#datastructureB)" section above for instructions regarding categorical reordering. Because *p* is less than 0.05, we can reject the null hypothesis that there is no significant difference between Ohioans' and Michiganders' professional football viewing habits.
+
+<a name="ttestsC"></a>
+
+#### Paired (Dependent) Samples *t*-test
+
+From the "T-Tests" menu at the top, select "Paired Samples T-Test". For this example, let's look at whether people watch different amounts of NCAA and NFL football in a typical week. Because we have two measures per participant, we can compare one value against the other *within* each row in the data set -- "paired". Move both `Hours_NCAA` and `Hours_NFL` into the "Variable pairs" window. Note that the two variables we are comparing should appear side-by-side in this window instead of stacked like in previous tests. You can drag and drop variables around in this window similar to how you drag and drop variables in the function editor we used in the "[Variable Tranformation](#variabletransform)" section above -- this is also how you can swap the order of the comparison (i.e., flip the sign of the *t* statistic).
+
+We'll leave the test at the default "Student" option. Likewise, because we're testing for non-directional differences, we can leave "Alt. Hypothesis" at the default two-tailed option. Just mark "Effect Size" to print the Cohen's *d* statistic, and make sure that "Descriptives" is also checked. Here are the results:
+
+<center> <img src="https://raw.githubusercontent.com/Matt-Sweitzer/Comm3163/master/Fall_2020/Example%20Analyses/Pictures/JASP_ttest_PS.png", width=90%> </center>
+
+Because *p* is 0.131 -- above the conventional alpha level of 0.05 -- we should fail to reject the null hypothesis. In other words, there are no *significant* differences between the number of hours spent watching college and professional football in our sample.
