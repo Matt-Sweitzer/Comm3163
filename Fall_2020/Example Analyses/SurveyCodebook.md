@@ -1,4 +1,6 @@
-# Codebook for <a href="https://github.com/Matt-Sweitzer/Comm3163/blob/master/Fall_2020/Example%20Analyses/ExampleSurveyData.csv">example data</a>
+# Codebook for <a href="https://github.com/Matt-Sweitzer/Comm3163/raw/master/Fall_2020/Example%20Analyses/ExampleSurveyData.csv">example data</a><sup>1</sup>
+
+<sup>1</sup>(right click, save linked file)
 
 ## Participant
 
