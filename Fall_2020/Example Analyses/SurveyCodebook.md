@@ -1,4 +1,4 @@
-# Codebook for <a href="https://github.com/Matt-Sweitzer/Comm3163/blob/master/Fall_2020/Example%20Analyses/ExampleData.xlsx">example data</a>
+# Codebook for <a href="https://github.com/Matt-Sweitzer/Comm3163/blob/master/Fall_2020/Example%20Analyses/ExampleSurveyData.csv">example data</a>
 
 ## Participant
 
