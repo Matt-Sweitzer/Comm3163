@@ -409,7 +409,7 @@ Before we continue, please make sure that all of the variables are encoded corre
 |ViolentImageRating_3|Scale|
 |ViolentImageRating_Mean|Scale|
 |Gender|Nominal|
-|GameRating|Nominal|
+|GameRating|Ordinal|
 |PlayMode|Nominal|
 
 </center>
